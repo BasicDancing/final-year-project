@@ -1,7 +1,6 @@
-Frontend: React
-Backend: Django
+#Frontend: Angular
+#Backend: Spring Boot
 
-Will be Added:
 As User 
 	-Login
 	-Registration
