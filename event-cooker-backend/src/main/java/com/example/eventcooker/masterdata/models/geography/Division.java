@@ -24,9 +24,6 @@ public class Division {
 	@Column(name = "name", length = 255)
 	private String name;
 	
-	@Column(name = "geocode", length = 255)
-	private String geocode;
-	
 	@OneToMany(
 			mappedBy = "division",
 			fetch = FetchType.LAZY,

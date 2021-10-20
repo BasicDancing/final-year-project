@@ -2,15 +2,18 @@ package com.example.eventcooker.masterdata.models.user;
 
 import com.example.eventcooker.masterdata.models.geography.Address;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.sql.Blob;
 import java.time.Instant;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @AllArgsConstructor
-@Getter
+@Getter(AccessLevel.NONE)
+@Setter(AccessLevel.NONE)
 @ToString
 @NoArgsConstructor
 @Table(name = "photographer")
@@ -89,81 +92,8 @@ public class Photographer {
 
     //Will be auto generated
     @Column(name = "modifiedOn")
-    private Instant modifiedOn;
+    private Instant modifiedOn = Instant.now();
 
     @Column(name = "modifiedBy", length = 255)
     private String modifiedBy;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public void setCurrentStatus(String currentStatus) {
-        this.currentStatus = currentStatus;
-    }
-
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setNid(String nid) {
-        this.nid = nid;
-    }
-
-    public void setBirthRegNO(String birthRegNO) {
-        this.birthRegNO = birthRegNO;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public void setBloodGroup(String bloodGroup) {
-        this.bloodGroup = bloodGroup;
-    }
-
-    public void setMaritialStatus(String maritialStatus) {
-        this.maritialStatus = maritialStatus;
-    }
-
-    public void setParentMobibleNo(String parentMobibleNo) {
-        this.parentMobibleNo = parentMobibleNo;
-    }
-
-    public void setPhoto(Blob photo) {
-        this.photo = photo;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    @PreUpdate
-    public void setModifiedOn() {
-        this.modifiedOn = Instant.now();
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }
 }

@@ -22,9 +22,6 @@ public class District {
 	@Column(name = "name", length = 255)
 	private String name;
 	
-	@Column(name = "geocode", length = 255)
-	private String geocode;
-	
 	@ManyToOne(
 			cascade = CascadeType.ALL,
 			fetch = FetchType.LAZY
