@@ -1,8 +1,7 @@
-package com.example.eventcooker.masterdata.models.user;
+package com.example.eventcooker.masterdata.models.users;
 
 import com.example.eventcooker.masterdata.models.geography.Address;
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.sql.Blob;

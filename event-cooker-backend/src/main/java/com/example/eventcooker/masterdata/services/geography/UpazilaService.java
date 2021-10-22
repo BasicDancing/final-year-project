@@ -3,7 +3,9 @@ package com.example.eventcooker.masterdata.services.geography;
 import com.example.eventcooker.masterdata.models.geography.Upazila;
 import com.example.eventcooker.masterdata.repositories.geography.UpazilaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UpazilaService {
 
     @Autowired

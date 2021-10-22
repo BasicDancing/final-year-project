@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { PhotographerComponent } from './src/app/user/photographer/photographer.component';
+import { PhotographerComponent } from './user/photographer/photographer.component';
 import { CinematographerComponent } from './user/cinematographer/cinematographer.component';
 
 @NgModule({
