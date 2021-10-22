@@ -17,19 +17,10 @@ Feature
 All working perfectly!!!
 =======================
 Search:
-1. Faculty
-2. Address
-3. Division
-4. District
-5. Upazila
-6. Student
-7. Batch
-8. Phase
-9. Department
-10. Part
-11. Subject
-12.Institute
-13. Section
+1. Address
+2. Division
+3. District
+4. Upazila
 ===========================
 
 Masterdata API
