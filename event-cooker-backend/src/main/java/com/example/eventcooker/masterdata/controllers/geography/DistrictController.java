@@ -1,7 +1,7 @@
 package com.example.eventcooker.masterdata.controllers.geography;
 
-import com.example.eventcooker.masterdata.models.geography.Upazila;
-import com.example.eventcooker.masterdata.services.geography.UpazilaService;
+import com.example.eventcooker.masterdata.models.geography.District;
+import com.example.eventcooker.masterdata.services.geography.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,19 +11,18 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/masterdata/geography/upazila")
-public class UpazilaController {
+@RequestMapping("/api/masterdata/geography/district")
+public class DistrictController {
 
     @Autowired
-    private UpazilaService upazilaService;
+    private DistrictService districtService;
 
 
     @PostMapping("/add")
-    public @ResponseBody
-    ResponseEntity<Upazila> saveUpazila(@RequestBody Upazila upazila){
+    public @ResponseBody ResponseEntity<District> saveDistrict(@RequestBody District district){
         try {
             return new ResponseEntity<>(
-                    upazilaService.createUpazila(upazila),
+                    districtService.createDistrict(district),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -34,10 +33,10 @@ public class UpazilaController {
     }
 
     @PostMapping("/add-all")
-    public @ResponseBody ResponseEntity<List<Upazila>> saveUpazilas(@RequestBody List<Upazila> upazilas){
+    public @ResponseBody ResponseEntity<List<District>> saveDistricts(@RequestBody List<District> districts){
         try {
             return new ResponseEntity<>(
-                    upazilaService.createUpazilas(upazilas),
+                    districtService.createDistricts(districts),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -48,10 +47,10 @@ public class UpazilaController {
     }
 
     @GetMapping("/get/{id}")
-    public @ResponseBody ResponseEntity<Upazila> getUpazila(@PathVariable Long id){
+    public @ResponseBody ResponseEntity<District.Serializer> getDistrict(@PathVariable Long id){
         try {
             return new ResponseEntity<>(
-                    upazilaService.findUpazila(id),
+                    districtService.findDistrict(id),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -62,10 +61,10 @@ public class UpazilaController {
     }
 
     @GetMapping("/get-all")
-    public @ResponseBody ResponseEntity<List<Upazila>> getUpazilas(){
+    public @ResponseBody ResponseEntity<List<District.Serializer>> getDistricts(){
         try {
             return new ResponseEntity<>(
-                    upazilaService.findUpazilas(),
+                    districtService.findDistricts(),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -76,10 +75,10 @@ public class UpazilaController {
     }
 
     @PutMapping("/update")
-    public @ResponseBody ResponseEntity<Upazila> changeUpazila(@RequestBody Upazila upazila){
+    public @ResponseBody ResponseEntity<District> changeDistrict(@RequestBody District district){
         try {
             return new ResponseEntity<>(
-                    upazilaService.updateUpazila(upazila),
+                    districtService.updateDistrict(district),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -90,10 +89,10 @@ public class UpazilaController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public @ResponseBody ResponseEntity<String> deleteUpazila(@PathVariable Long id){
+    public @ResponseBody ResponseEntity<String> deleteDistrict(@PathVariable Long id){
         try {
             return new ResponseEntity<>(
-                    upazilaService.deleteUpazila(id),
+                    districtService.deleteDistrict(id),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -104,10 +103,10 @@ public class UpazilaController {
     }
 
     @DeleteMapping("/delete-all")
-    public @ResponseBody ResponseEntity<String> deleteUpazilas(){
+    public @ResponseBody ResponseEntity<String> deleteDistricts(){
         try {
             return new ResponseEntity<>(
-                    upazilaService.deleteUpazilas(),
+                    districtService.deleteDistricts(),
                     HttpStatus.OK
             );
         }catch (Exception e){

@@ -1,10 +1,10 @@
 package com.example.eventcooker.masterdata.models.geography;
 
+import com.example.eventcooker.masterdata.utils.geography.SerializerUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import net.minidev.json.annotate.JsonIgnore;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.*;
 
@@ -23,13 +23,22 @@ public class Division {
 
 	@Column(name = "name", length = 255)
 	private String name;
-	
+
 	@OneToMany(
 			mappedBy = "division",
 			fetch = FetchType.LAZY,
-			cascade = CascadeType.ALL
+			cascade = CascadeType.MERGE
 	)
 	@JsonIgnore
 	@ToString.Exclude
 	private List<District> districts;
+
+	@NoArgsConstructor
+	@Setter
+	@Getter
+	public static class Serializer extends SerializerUtil {
+		private Long id;
+		private String name;
+		private List<District> districts;
+	}
 }

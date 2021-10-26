@@ -67,11 +67,11 @@ public class Photographer {
     @Column(name = "martialStatus", length = 30)
     private String maritialStatus;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "permanentAddress")
     private Address permanentAddress;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "presentAddress")
     private Address presentAddress;
 

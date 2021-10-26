@@ -1,6 +1,8 @@
 package com.example.eventcooker.masterdata.models.geography;
 
 import javax.persistence.*;
+
+import com.example.eventcooker.masterdata.utils.geography.AddressUtil;
 import lombok.*;
 
 @Entity
@@ -34,15 +36,15 @@ public class Address {
 	@Column(name = "postalCode", length = 50)
 	private String postalCode;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "divisionId")
 	private Division division;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "districtId")
 	private District district;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "upazilaId")
 	private Upazila upazila;
 }
