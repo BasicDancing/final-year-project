@@ -40,7 +40,7 @@ Masterdata API
 			},
 			"district" : {
 				"id": 5527,
-                "name": "DINAJPUR"
+                		"name": "DINAJPUR"
 			},
 			"upazila" : {
 				"id" : 552710
@@ -648,3 +648,119 @@ Masterdata API
 	   Endpoint: /api/masterdata/geography/upazila/delete-all
 	   Method: DELETE
 	   Response Body: Successfully delete all entities!!!
+
+
+4. Photographer API Description:
+
+	1. Description: 
+	   Endpoint: /api/masterdata/user/photographer/add
+	   Method: POST
+	   Perameter:
+{
+    "fullName": "Alif1323",
+    "currentStatus": "Regular",
+    "cellphone": "01767310339",
+    "email": "alifcse49@gmail.com",
+    "nid": "554546121564",
+    "birthRegNo": "3497328975374983759837",
+    "dateOfBirth": "1997-08-18",
+    "age": 24,
+    "gender": "Male",
+    "nationality": "Bangladeshi",
+    "bloodGroup": "A+",
+    "maritialStatus": "Single",
+    "permanentAddress": {
+        "street": "Kalabagan",
+        "postOffice": "Dhanmondi",
+        "postalCode": "1205",
+        "division": {
+            "id": 60
+        },
+        "district": {
+            "id": 6036
+        },
+        "upazila": {
+            "id": 603605
+        }
+    },
+    "presentAddress": {
+        "street": "Kalabagan",
+        "postOffice": "Dhanmondi",
+        "postalCode": "1205",
+        "division": {
+            "id": 60
+        },
+        "district": {
+            "id": 6036
+        },
+        "upazila": {
+            "id": 603605
+        }
+    },
+    "workPhone": "01706344583"
+}
+	   Response Body:
+		{
+			"id": 603602,
+			"name": "AJMIRIGANJ",
+			"geocode": "603602",
+			"district": null
+		}
+
+	   
+	3. Description:
+	   Endpoint: /api/masterdata/user/photographer/get/202
+	   Method: GET
+	   Response Body:
+		[
+			{
+				"id": 552710,
+				"name": "BIRAMPUR",
+				"geocode": null,
+				"district": null
+			},
+			{
+				"id": 603602,
+				"name": "AJMIRIGANJ",
+				"geocode": "603602",
+				"district": null
+			},
+			{
+				"id": 603605,
+				"name": "BAHUBAL",
+				"geocode": null,
+				"district": null
+			}
+		]
+		
+	4. Description:
+	   Endpoint: /api/masterdata/geography/upazila/get/552710
+	   Method: GET
+	   Response Body:
+		{
+			"id": 552710,
+			"name": "BIRAMPUR",
+			"geocode": null,
+			"district": null
+		}
+		
+	5. Description:
+	   Endpoint: /api/masterdata/geography/upazila/delete/603605
+	   Method: DELETE
+	   Response Body: Upazila removed 603605!!
+	   
+	   
+	6. Description:
+	   Endpoint: /api/masterdata/geography/upazila/update
+	   Method: PUT
+	   Perameter:
+		{
+			"id": 552710,
+			"name": "WRONG PLACE"
+		}		
+	   
+	7. Description:
+	   Endpoint: /api/masterdata/geography/upazila/delete-all
+	   Method: DELETE
+	   Response Body: Successfully delete all entities!!!
+
