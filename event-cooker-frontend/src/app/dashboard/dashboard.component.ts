@@ -9,7 +9,11 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  sideBarOpen = true;
+
+  ngOnInit() {}
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
 
 }
