@@ -1,7 +1,8 @@
 package com.example.eventcooker.masterdata.models.geography;
 
+import com.example.eventcooker.masterdata.utils.geography.SerializerUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import net.minidev.json.annotate.JsonIgnore;
 import java.util.List;
 import javax.persistence.*;
 
@@ -11,7 +12,6 @@ import javax.persistence.*;
 @Setter
 @ToString
 @NoArgsConstructor
-@EqualsAndHashCode
 @Table(name = "district")
 public class District {
 
@@ -23,7 +23,7 @@ public class District {
 	private String name;
 	
 	@ManyToOne(
-			cascade = CascadeType.ALL,
+			cascade = CascadeType.MERGE,
 			fetch = FetchType.LAZY
 	)
     @JoinColumn(
@@ -35,10 +35,19 @@ public class District {
 	
 	@OneToMany(
 			mappedBy = "district",
-			cascade = CascadeType.ALL,
+			cascade = CascadeType.MERGE,
 			fetch = FetchType.LAZY
 	)
 	@JsonIgnore
 	@ToString.Exclude
 	private List<Upazila> upazilas;
+
+	@NoArgsConstructor
+	@Setter
+	@Getter
+	public static class Serializer extends SerializerUtil {
+		private Long id;
+		private String name;
+		private List<Upazila> upazilas;
+	}
 }

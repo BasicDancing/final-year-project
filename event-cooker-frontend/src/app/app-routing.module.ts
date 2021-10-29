@@ -1,12 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { PhotographerComponent } from './user/photographer/photographer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  {path: 'dashboard', component: HomeComponent},
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
+  { path: 'forgot', component: ForgotComponent},
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'sidenav', component: SidenavComponent},
+  { path: 'header', component: HeaderComponent},
+
 ];
 
 @NgModule({
