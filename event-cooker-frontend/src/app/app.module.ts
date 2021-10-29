@@ -16,6 +16,14 @@ import { CinematographerComponent } from './user/cinematographer/cinematographer
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,9 @@ import { LoginComponent } from './login/login.component';
     SidenavComponent,
     PhotographerComponent,
     CinematographerComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ForgotComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,14 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([]),
     CommonModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
