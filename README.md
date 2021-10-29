@@ -1,4 +1,6 @@
-# Frontend: Angular  
+# Frontend: Angular 
+Tailwind CSS: https://dev.to/angular/setup-tailwindcss-in-angular-the-easy-way-1i5l
+ 
 # Backend: Spring Boot
 
 As User  
