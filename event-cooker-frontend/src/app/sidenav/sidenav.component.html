@@ -1,1 +1,25 @@
-<p>sidenav works!</p>
+<mat-nav-list>
+    <div class="event">
+        <h1 style="color: goldenrod;font-family: 'Lobster';font-size: 40px;">Event Cooker</h1>
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">APPLICATION</h2>
+    <a mat-list-item routerLink="/home" routerLinkActive="list-item-active">
+        <mat-icon>home</mat-icon>Home
+    </a>
+    <a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
+        <mat-icon>dashboard</mat-icon>Dashboard
+    </a>
+    <a mat-list-item routerLink="/photography" routerLinkActive="list-item-active" >
+        <mat-icon>edit</mat-icon>Photography
+    </a>
+    <a mat-list-item >
+        <mat-icon>edit</mat-icon>Cinemetography
+    </a>
+    <a mat-list-item >
+        <mat-icon>edit</mat-icon>Spa
+    </a>
+    <a mat-list-item >
+        <mat-icon>edit</mat-icon>Dress
+    </a>
+</mat-nav-list>
