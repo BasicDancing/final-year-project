@@ -13,7 +13,11 @@ import { UserComponent } from './user/user.component';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'user', component: UserComponent },
+  { 
+    path: 'user',
+    loadChildren: () => import(`./user/user.module`).then(m => m.UserModule), 
+    component: UserComponent 
+  },
   { path: 'admin', component: AdminComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
@@ -21,11 +25,10 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'sidenav', component: SidenavComponent},
   { path: 'header', component: HeaderComponent},
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes,{ enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
