@@ -5,9 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { CinematographerComponent } from './cinematographer/cinematographer.component';
 import { PhotographerComponent } from './photographer/photographer.component';
 import { UserComponent } from './user.component';
-import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -15,14 +13,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserComponent,
     CinematographerComponent,
     PhotographerComponent,
+    UserDashboardComponent,
   ],
   imports: [
-    NgbModule,
     CommonModule,
     UserRoutingModule,
-    RouterModule.forChild([]),
-    BrowserModule,
-
   ]
 })
 export class UserModule { }

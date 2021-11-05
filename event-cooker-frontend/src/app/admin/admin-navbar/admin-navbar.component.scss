@@ -28,5 +28,7 @@ button{
 ::ng-deep {
     .mat-menu-content{
         width: 160px;
+        height: 100%;
+        background-color: white;
     }
 }

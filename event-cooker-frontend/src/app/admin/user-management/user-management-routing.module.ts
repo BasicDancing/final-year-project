@@ -3,17 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { CinematographerComponent } from './cinematographer/cinematographer.component';
 import { PhotographerComponent } from './photographer/photographer.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import { UserManagementComponent } from './user-management.component';
 
 const routes: Routes = [
-  { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'photographer', component: PhotographerComponent },
   { path: 'cinematographer', component: CinematographerComponent },
-  { path: '', redirectTo: '/user/user-dashboard', pathMatch: 'full' },
+  { path: 'user-dashboard', component: UserDashboardComponent },
+  { path: '', redirectTo: '/admin/user-management/user-dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserRoutingModule { }
+export class UserManagementRoutingModule { }

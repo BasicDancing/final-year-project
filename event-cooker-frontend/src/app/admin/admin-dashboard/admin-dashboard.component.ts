@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-admin-dashboard',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit {
 
   constructor() { }
 
@@ -15,5 +15,4 @@ export class DashboardComponent implements OnInit {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
-
 }

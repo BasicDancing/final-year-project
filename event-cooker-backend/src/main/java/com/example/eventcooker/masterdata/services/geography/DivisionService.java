@@ -2,6 +2,7 @@ package com.example.eventcooker.masterdata.services.geography;
 
 import com.example.eventcooker.masterdata.models.geography.Division;
 import com.example.eventcooker.masterdata.repositories.geography.DivisionRepository;
+import com.example.eventcooker.masterdata.utils.geography.CSVParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,8 @@ public class DivisionService {
 
     @Autowired
     private DivisionRepository divisionRepository;
+
+    @Autowired CSVParser csvParser;
 
     //POST
     public Division createDivision(Division division){
@@ -34,6 +37,7 @@ public class DivisionService {
 
     //GET ALL
     public List<Division.Serializer> findDivisions(){
+        csvParser.csvProcess();
         List<Division> divisions = divisionRepository.findAll();
         List<Division.Serializer> serializers = new ArrayList<>();
         Division.Serializer serializer = new Division.Serializer();
