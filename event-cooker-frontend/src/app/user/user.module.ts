@@ -6,7 +6,7 @@ import { CinematographerComponent } from './cinematographer/cinematographer.comp
 import { PhotographerComponent } from './photographer/photographer.component';
 import { UserComponent } from './user.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
   imports: [
     CommonModule,
     UserRoutingModule,
+
+    //Material UI
+    MatCardModule,
   ]
 })
 export class UserModule { }

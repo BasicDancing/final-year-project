@@ -11,5 +11,5 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  items = ['a', 'b', 'c', 'd', 'e', 'f'];
 }
