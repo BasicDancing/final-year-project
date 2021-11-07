@@ -8,8 +8,8 @@ import { UserManagementComponent } from './user-management.component';
 const routes: Routes = [
   { path: 'photographer', component: PhotographerComponent },
   { path: 'cinematographer', component: CinematographerComponent },
-  { path: 'user-dashboard', component: UserDashboardComponent },
-  { path: '', redirectTo: '/admin/user-management/user-dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: UserDashboardComponent },
+  { path: '', redirectTo: '/admin/user/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({

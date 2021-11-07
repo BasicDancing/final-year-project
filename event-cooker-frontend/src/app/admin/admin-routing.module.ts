@@ -8,14 +8,14 @@ import { UserManagementComponent } from './user-management/user-management.compo
 
 const routes: Routes = [
   { 
-    path: 'user-management',
+    path: 'user',
     loadChildren: () => import(`./user-management/user-management.module`).then(m => m.UserManagementModule), 
     component: UserManagementComponent 
   },
-  { path: 'admin-dashboard', component: AdminDashboardComponent},
+  { path: 'dashboard', component: AdminDashboardComponent},
   { path: 'sidenav', component: AdminSidenavComponent},
   { path: 'navbar', component: AdminNavbarComponent},
-  { path: '', redirectTo: '/admin/admin-dashboard', pathMatch: 'full' }, 
+  { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' }, 
 ];
 
 @NgModule({

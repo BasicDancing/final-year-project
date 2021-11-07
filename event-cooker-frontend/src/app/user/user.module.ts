@@ -7,6 +7,8 @@ import { PhotographerComponent } from './photographer/photographer.component';
 import { UserComponent } from './user.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import {MatCardModule} from '@angular/material/card';
+import { UserNavbarComponent } from './user-navbar/user-navbar.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import {MatCardModule} from '@angular/material/card';
     CinematographerComponent,
     PhotographerComponent,
     UserDashboardComponent,
+    UserNavbarComponent,
+    UserHomeComponent,
   ],
   imports: [
     CommonModule,
