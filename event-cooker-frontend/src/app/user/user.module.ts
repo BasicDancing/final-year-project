@@ -9,6 +9,13 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import {MatCardModule} from '@angular/material/card';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -25,6 +32,14 @@ import { UserHomeComponent } from './user-home/user-home.component';
 
     //Material UI
     MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
+    MatCardModule,
+    MatBadgeModule
   ]
 })
 export class UserModule { }
