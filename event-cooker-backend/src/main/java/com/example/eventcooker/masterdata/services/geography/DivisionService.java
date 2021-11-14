@@ -28,21 +28,16 @@ public class DivisionService {
     }
 
     //GET
-    public Division.Serializer findDivision(Long id){
-        Division division = divisionRepository.findById(id).orElse(null);
-        Division.Serializer serializer = new Division.Serializer();
-        assert division != null;
-        return serializer.Serializaton(division);
+    public Division findDivision(Long id){
+        return divisionRepository.findById(id).orElse(null);
     }
 
     //GET ALL
-    public List<Division.Serializer> findDivisions(){
-        csvParser.csvProcess();
-        List<Division> divisions = divisionRepository.findAll();
-        List<Division.Serializer> serializers = new ArrayList<>();
-        Division.Serializer serializer = new Division.Serializer();
-        divisions.forEach(division -> {serializers.add(serializer.Serializaton(division));});
-        return serializers;
+    public List<Division> findDivisions(){
+        if(divisionRepository.findAll().isEmpty()){
+            csvParser.csvProcess();
+        }
+        return divisionRepository.findAll();
     }
 
     //PUT
@@ -58,6 +53,7 @@ public class DivisionService {
 
     //DELETE
     public String deleteDivision(Long id){
+        System.out.println("Alif");
         divisionRepository.deleteById(id);
         return "Successfully deleted division which id was " + id + ":)";
     }

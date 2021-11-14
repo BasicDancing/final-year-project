@@ -1,6 +1,4 @@
 package com.example.eventcooker.masterdata.models.geography;
-
-import com.example.eventcooker.masterdata.utils.geography.SerializerUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import java.util.List;
@@ -30,6 +28,7 @@ public class District {
 			foreignKey = @ForeignKey(name = "divisionId"),
 			name = "divisionId"
 	)
+	@JsonIgnore
 	@ToString.Exclude
 	private Division division;
 	
@@ -38,16 +37,6 @@ public class District {
 			cascade = CascadeType.MERGE,
 			fetch = FetchType.LAZY
 	)
-	@JsonIgnore
 	@ToString.Exclude
 	private List<Upazila> upazilas;
-
-	@NoArgsConstructor
-	@Setter
-	@Getter
-	public static class Serializer extends SerializerUtil {
-		private Long id;
-		private String name;
-		private List<Upazila> upazilas;
-	}
 }

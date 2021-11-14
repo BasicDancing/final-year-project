@@ -1,5 +1,6 @@
 package com.example.eventcooker.masterdata.models.geography;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class Upazila {
 			foreignKey = @ForeignKey(name = "districtId"),
 			name = "districtId"
 	)
+	@JsonIgnore
 	@ToString.Exclude
 	private District district;
 }

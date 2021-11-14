@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'dashboard', component: UserDashboardComponent },
   { path: 'photographer', component: PhotographerComponent },
   { path: 'cinematographer', component: CinematographerComponent },
-  { path: '', redirectTo: '/user/user-dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -2,11 +2,13 @@ package com.example.eventcooker.masterdata.controllers.geography;
 
 import com.example.eventcooker.masterdata.models.geography.Address;
 import com.example.eventcooker.masterdata.services.geography.AddressService;
+import com.example.eventcooker.masterdata.utils.geography.SerializerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -17,6 +19,8 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
+    @Autowired
+    private SerializerUtil serializerUtil;
 
     @PostMapping("/add")
     public @ResponseBody
@@ -34,10 +38,14 @@ public class AddressController {
     }
 
     @GetMapping("/get-all")
-    public @ResponseBody ResponseEntity<List<Address>> getAddresss(){
+    public @ResponseBody ResponseEntity<List<SerializerUtil.AddressSerializer>> getAddresss(){
         try {
+            List<SerializerUtil.AddressSerializer> serializers = new ArrayList<>();
+            for (Address address: addressService.findAddresss()){
+                serializers.add(serializerUtil.addressSerializer(address));
+            }
             return new ResponseEntity<>(
-                    addressService.findAddresss(),
+                    serializers,
                     HttpStatus.OK
             );
         }catch (Exception e){

@@ -43,20 +43,13 @@ public class DistrictService {
     }
 
     //GET
-    public District.Serializer findDistrict(Long id){
-        District district = districtRepository.findById(id).orElse(null);
-        District.Serializer serializer = new District.Serializer();
-        assert district != null;
-        return serializer.Serializaton(district);
+    public District findDistrict(Long id){
+        return districtRepository.findById(id).orElse(null);
     }
 
     //GET ALL
-    public List<District.Serializer> findDistricts(){
-        List<District> districts = districtRepository.findAll();
-        List<District.Serializer> serializers = new ArrayList<>();
-        District.Serializer serializer = new District.Serializer();
-        districts.forEach(district -> {serializers.add(serializer.Serializaton(district));});
-        return serializers;
+    public List<District> findDistricts(){
+       return districtRepository.findAll();
     }
 
     //PUT

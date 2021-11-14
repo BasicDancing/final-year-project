@@ -47,7 +47,7 @@ public class DivisionController {
     }
 
     @GetMapping("/get/{id}")
-    public @ResponseBody ResponseEntity<Division.Serializer> getDivision(@PathVariable Long id){
+    public @ResponseBody ResponseEntity<Division> getDivision(@PathVariable Long id){
         try {
             return new ResponseEntity<>(
                     divisionService.findDivision(id),
@@ -61,7 +61,7 @@ public class DivisionController {
     }
 
     @GetMapping("/get-all")
-    public @ResponseBody ResponseEntity<List<Division.Serializer>> getDivisions(){
+    public @ResponseBody ResponseEntity<List<Division>> getDivisions(){
         try {
             return new ResponseEntity<>(
                     divisionService.findDivisions(),

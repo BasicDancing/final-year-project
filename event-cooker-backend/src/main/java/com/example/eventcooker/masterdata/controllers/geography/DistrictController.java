@@ -47,7 +47,7 @@ public class DistrictController {
     }
 
     @GetMapping("/get/{id}")
-    public @ResponseBody ResponseEntity<District.Serializer> getDistrict(@PathVariable Long id){
+    public @ResponseBody ResponseEntity<District> getDistrict(@PathVariable Long id){
         try {
             return new ResponseEntity<>(
                     districtService.findDistrict(id),
@@ -61,7 +61,7 @@ public class DistrictController {
     }
 
     @GetMapping("/get-all")
-    public @ResponseBody ResponseEntity<List<District.Serializer>> getDistricts(){
+    public @ResponseBody ResponseEntity<List<District>> getDistricts(){
         try {
             return new ResponseEntity<>(
                     districtService.findDistricts(),

@@ -4,9 +4,12 @@ import com.example.eventcooker.masterdata.models.geography.Address;
 import com.example.eventcooker.masterdata.repositories.geography.DistrictRepository;
 import com.example.eventcooker.masterdata.repositories.geography.DivisionRepository;
 import com.example.eventcooker.masterdata.repositories.geography.UpazilaRepository;
-import com.example.eventcooker.masterdata.services.geography.DivisionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AddressUtil {
