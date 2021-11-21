@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Photographer } from './photographer';
+import { PhotographerService } from './photographer.service';
 
 @Component({
   selector: 'app-photographer',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotographerComponent implements OnInit {
 
-  constructor() { }
+  photographers: Photographer[];
+  
+  constructor(
+    private photographerService: PhotographerService
+  ) {}
 
   ngOnInit(): void {
+    this.reloadData();
   }
 
+  reloadData(){
+    console.log("Worked")
+    this.photographerService.getAll().subscribe(
+      data => {
+        this.photographers = data;
+        console.log(this.photographers);
+      }
+    );
+  }
 }

@@ -6,7 +6,7 @@ import { CinematographerComponent } from './cinematographer/cinematographer.comp
 import { PhotographerComponent } from './photographer/photographer.component';
 import { UserComponent } from './user.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,7 +15,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,9 @@ import {MatBadgeModule} from '@angular/material/badge';
   imports: [
     CommonModule,
     UserRoutingModule,
+
+    //Bootstrap
+    NgbModule,
 
     //Material UI
     MatCardModule,

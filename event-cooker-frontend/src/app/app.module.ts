@@ -15,11 +15,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-  
     AppComponent,
     HomeComponent,
     LoginComponent,
@@ -30,7 +30,8 @@ import { MatCardModule } from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    
+    HttpClientModule,
+  
     //Bootstrap
     NgbModule,
 

@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngFor="let photographer of photographers" class="container">
     <div class="main-body">
         <div class="row">
             <div class="col-lg-4">
@@ -8,7 +8,7 @@
                             <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
                                 class="rounded-circle p-1 bg-primary" width="110">
                             <div class="mt-3">
-                                <h4>User</h4>
+                                <h4>{{ photographer.fullName }}</h4>
                                 <p class="text-secondary mb-1">Photographer</p>
                                 <p class="text-muted font-size-sm">Dhaka,Bangladesh</p>
                                 <button class="btn btn-primary">Follow</button>
@@ -97,7 +97,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            123456789
+                                                            {{ photographer.id }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -109,7 +109,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            Shahriar Kabbo
+                                                            {{ photographer.fullName }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -120,7 +120,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            Bootstrap
+                                                            {{ photographer.currentStatus }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -132,7 +132,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            bootnipets
+                                                            {{ photographer.cellphone }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -143,29 +143,29 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            Admin
+                                                            {{ photographer.email }}
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <strong>
                                                                 <i class="bi bi-dot"></i>
-                                                                Nid
+                                                                NID No:
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            noreply@email.com
+                                                            {{ photographer.nid }}
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <strong>
                                                                 <i class="bi bi-dot"></i>
-                                                                Birth Registration  No
+                                                                Birth Registration No
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014
+                                                            {{ photographer.birthRegNo }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -176,7 +176,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.dateOfBirth }}
                                                         </td>
                                                     </tr>
 
@@ -188,7 +188,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.age }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -199,7 +199,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.gender }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -210,7 +210,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.nationality }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -221,7 +221,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.bloodGroup }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -232,7 +232,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.maritialStatus }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -265,7 +265,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.workPhone }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -276,7 +276,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.createdOn }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -287,7 +287,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.createdBy }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -298,7 +298,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.modifiedOn }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -310,7 +310,7 @@
                                                             </strong>
                                                         </td>
                                                         <td class="text-primary">
-                                                            20 jul 20014 20:00:00
+                                                            {{ photographer.modifiedBy }}
                                                         </td>
                                                     </tr>
                                                 </tbody>
