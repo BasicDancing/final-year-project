@@ -1,51 +1,42 @@
-<body class="h-96 bg-green-400 ">
-  <nav class="flex items-center justify-between flex-wrap px-4">
-  
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <!-- <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/>
-      </svg> -->
-      <img class="w-10 mr-3" src="../../assets/img/home/brand.png" alt="">
-      <span class="font-semibold text-xl tracking-tight">Event Cooker</span>
-    </div>
-  
-    <div class="block lg:hidden">
-      <button class="flex items-center mt-4 px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-        </svg>
-      </button>
-    </div>
-  
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto lg:ml-52 lg:mb-3">
-      <div class="text-sm lg:flex-grow">
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-          Admin
-        </a>
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-          User
-        </a>
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-          Contact
+<div class="mother">
+  <div id="home" class="container-fluid bg-gradient-to-b from-green-500 to-blue-400">
+    <nav class="flex justify-between">
+      <div class="left_side">
+        <a routerLink="/home" class="flex space-x-2 ml-4">
+          <img class="w-10 mr-2 bg mt-2 lg:mt-0" src="../../assets/img/home/brand.png" alt="">
+          <span class="mt-3 lg:mt-0 font-semibold text-xl tracking-tight" style="color: rgb(253, 209, 97); font-family: 'Lobster'; font-size: 30px;">Event Cooker</span>
         </a>
       </div>
   
-      <div>
-        <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log In</a>
+      <div class="middle_side flex space-x-4 px-3">
+          <a href="#home" class="mt-4 lg:mt-0">Home</a>
+          <a href="#service" class="mt-4 lg:mt-0">Service</a>
+          <a href="#contact" class="mt-4 lg:mt-0">Contact</a>
+          <a href="#details" class="mt-4 lg:mt-0">Details</a>
       </div>
   
-    </div>
-  </nav>
-
-  <div class="intro lg:p-20">
-    <span class="font-bold text-4xl">A Place, You may find everything...</span>
-    <div class="intro-bottom">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto doloremque natus id mollitia. Dolorem rerum temporibus magni doloribus, vero veritatis repellat aspernatur dignissimos, maxime sapiente distinctio illum eaque qui, facilis similique modi quia praesentium magnam! Fugiat nisi neque sequi eos beatae ipsam architecto fugit officia tenetur. Amet, dolore perferendis.</p>
-      <div class="bottom-button">
-        <button class="py-2 px-4 shadow-sm text-sm font-medium rounded-md text-white bg-red-400" routerLink="/admin">Admin</button>
-        <button class="py-2 px-4 shadow-sm text-sm font-medium rounded-md text-white bg-red-400 ml-4" routerLink="/user">User</button>
+      <div class="right_side flex space-x-4 mr-4">
+        <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" routerLink="/login" routerLinkActive="router-link-active" >Log In</a>
+        <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" routerLink="/user" routerLinkActive="router-link-active" >User</a>
+        <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" routerLink="/admin" routerLinkActive="router-link-active" >Admin</a>
+      </div>
+    </nav>
+  
+    <div class="intro container-fluid lg:p-20">
+      <span class="font-bold text-5xl text-uppercase text-yellow-50">A Place, You may find everything...</span>
+      <div class="intro-bottom text-white">
+        <p class="text-lg">In our country a lot event arranged for which we need to hire different professional artist and specialist from different places.  We want to  bring them all together in  one platform so that it becomes easier for a client to hire people according to their needs. It will be also  beneficial  for all the professional as they will be able to reach their client so easily. 
+        </p>
+        <div class="bottom-button mt-10 flex justify-end">
+          <button class="py-2 px-4 shadow-sm text-sm font-medium rounded-md text-white bg-green-400 ml-4 text-uppercase" routerLink="/register">Become a freelancer</button>
+        </div>
       </div>
     </div>
   </div>
-</body>
+  <div class="services">
+    <app-our-services></app-our-services>
+  </div>
+  <div id="details" class="footer">
+    <app-footer></app-footer>
+  </div>
+</div>
