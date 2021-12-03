@@ -6,6 +6,12 @@ import { PhotographerComponent } from './photographer/photographer.component';
 import { CinematographerComponent } from './cinematographer/cinematographer.component';
 import { UserManagementComponent } from './user-management.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { DancerComponent } from './dancer/dancer.component';
+import { MusicianComponent } from './musician/musician.component';
+import { VoiceArtistComponent } from './voice-artist/voice-artist.component';
+import { CateringComponent } from './catering/catering.component';
+import { DecoratorComponent } from './decorator/decorator.component';
+import { ParlourComponent } from './parlour/parlour.component';
 
 
 @NgModule({
@@ -13,7 +19,13 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     UserManagementComponent,
     PhotographerComponent,
     CinematographerComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    DancerComponent,
+    MusicianComponent,
+    VoiceArtistComponent,
+    CateringComponent,
+    DecoratorComponent,
+    ParlourComponent
   ],
   imports: [
     CommonModule,

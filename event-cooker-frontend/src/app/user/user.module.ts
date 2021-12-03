@@ -17,6 +17,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ParlourComponent } from './parlour/parlour.component';
+import { DecoratorComponent } from './decorator/decorator.component';
+import { CateringComponent } from './catering/catering.component';
+import { MusicianComponent } from './musician/musician.component';
+import { VoiceArtistComponent } from './voice-artist/voice-artist.component';
+import { DancerComponent } from './dancer/dancer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserDashboardComponent,
     UserNavbarComponent,
     UserHomeComponent,
+    ParlourComponent,
+    DecoratorComponent,
+    CateringComponent,
+    MusicianComponent,
+    VoiceArtistComponent,
+    DancerComponent,
   ],
   imports: [
     CommonModule,
