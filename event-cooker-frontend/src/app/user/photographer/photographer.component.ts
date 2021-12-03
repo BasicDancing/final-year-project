@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Photographer } from './photographer';
-import { PhotographerService } from './photographer.service';
+import { Photographer } from '../../master-data/user/photographer/photographer';
+import { PhotographerService } from '../../master-data/user/photographer/photographer.service';
 
 @Component({
   selector: 'app-photographer',

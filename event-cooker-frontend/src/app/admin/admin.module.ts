@@ -14,6 +14,7 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { EquipmentManagementComponent } from './equipment-management/equipment-management.component';
 import { GeographyManagementComponent } from './geography-management/geography-management.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { GeographyManagementComponent } from './geography-management/geography-m
     AdminRoutingModule,
 
     //Material Ui
+    MatCardModule,
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,

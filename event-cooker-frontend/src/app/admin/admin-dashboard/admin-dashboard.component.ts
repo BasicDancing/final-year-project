@@ -12,7 +12,5 @@ export class AdminDashboardComponent implements OnInit {
   sideBarOpen = true;
 
   ngOnInit() {}
-  sideBarToggler() {
-    this.sideBarOpen = !this.sideBarOpen;
-  }
+  items = ['a', 'b', 'c', 'd', 'e', 'f'];
 }
