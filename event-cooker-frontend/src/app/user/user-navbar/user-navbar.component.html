@@ -2,7 +2,9 @@
 
   <div class="home__header bg-green-400" >
     <div class="home__header__left">
-      <img class="w-12" src="../../../assets/img/home/brand.png" alt="logo" mat-card-avatar>
+      <a routerLink="/home">
+        <img class="w-12" src="../../../assets/img/home/brand.png" alt="logo" mat-card-avatar>
+      </a>
       <div class="input">
         <mat-icon class="search-icon">search_outline</mat-icon>
         <form>
@@ -12,9 +14,9 @@
     </div>
     <div class="home__header__middle">
       <div class="active">
-        <mat-icon>home</mat-icon>
+        <a routerLink="/user"><mat-icon>home</mat-icon></a>
       </div>
-      <div>
+      <!-- <div>
         <mat-icon>ondemand_video</mat-icon>
       </div>
       <div>
@@ -25,7 +27,7 @@
       </div>
       <div>
         <mat-icon>flag</mat-icon>
-      </div>
+      </div> -->
 
 
     </div>

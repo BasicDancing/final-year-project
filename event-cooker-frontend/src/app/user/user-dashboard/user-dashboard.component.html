@@ -1,17 +1,21 @@
 <body bg-green-300>
-  <div class="admin-dashboard">
-      <mat-card class="example-card float-left m-4" *ngFor='let item of items'>
+
+  <h1 class="map flex justify-center text-blue-400">Google Map will be integrated here!!</h1>
+
+  <div class="admin-dashboard" *ngFor='let card of cardDetails'>
+      <a routerLink="{{ card.link }}">
+        <mat-card class="example-card float-left m-4">
           <mat-card-header>
-            <div class="example-header-image"></div>
-            <mat-card-title>Photographer</mat-card-title>
-            <mat-card-subtitle>Photographer</mat-card-subtitle>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+            <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image src="../../../assets/event/event.jpg" alt="Photo of a Shiba Inu">
+          <img mat-card-image src="{{ card.photo }}" alt="{{ card.subtitle }}">
           <mat-card-content>
             <p>
-              We will add more descirption!!
+              {{card.description}}
             </p>
           </mat-card-content>
-      </mat-card>
+        </mat-card>
+      </a>
   </div>
 </body>

@@ -12,6 +12,13 @@ import { VoiceArtistComponent } from './voice-artist/voice-artist.component';
 import { CateringComponent } from './catering/catering.component';
 import { DecoratorComponent } from './decorator/decorator.component';
 import { ParlourComponent } from './parlour/parlour.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -29,7 +36,16 @@ import { ParlourComponent } from './parlour/parlour.component';
   ],
   imports: [
     CommonModule,
-    UserManagementRoutingModule
+    UserManagementRoutingModule,
+
+    //Material UI
+    MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
   ]
 })
 export class UserManagementModule { }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { Photographer } from '../../master-data/user/photographer/photographer';
 import { PhotographerService } from '../../master-data/user/photographer/photographer.service';
