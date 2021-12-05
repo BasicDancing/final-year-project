@@ -1,4 +1,4 @@
 package com.example.eventcooker.masterdata.models.equipments;
 
-public class DecorationEquipment {
+public class ParlourPackage {
 }
