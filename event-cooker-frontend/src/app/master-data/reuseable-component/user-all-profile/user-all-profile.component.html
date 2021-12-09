@@ -1,0 +1,17 @@
+<div class="container mother">
+    <h1 class="text-center">{{ title }}</h1>
+    <mat-divider></mat-divider>
+  
+    <div class="row">
+      <div class="col-4 flex justify-between" *ngFor='let user of users'>
+        <div class="card mb-5" style="width:400px">
+          <img class="card-img-top" src="../../../assets/event/ProfileAvatar.jpg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">John Doe</h4>
+            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+            <a  routerLink="/user/profile" [state]="{user}" class="btn btn-primary stretched-link">See Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

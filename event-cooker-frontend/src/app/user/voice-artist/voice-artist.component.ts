@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VoiceArtistComponent implements OnInit {
 
+  numbers = Array(10);
+  title = "Voice Artist";
+
   constructor() { }
 
   ngOnInit(): void {

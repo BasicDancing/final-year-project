@@ -18,7 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { UserAllProfileComponent } from './master-data/reuseable-component/user-all-profile/user-all-profile.component';
+import { UserProfileComponent } from './master-data/reuseable-component/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     ForgotComponent,
     OurServicesComponent,
     FooterComponent,
+    //UserProfileComponent,
+    //UserAllProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,6 @@ import { FooterComponent } from './footer/footer.component';
     MatDividerModule,
     MatIconModule,
     MatCardModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

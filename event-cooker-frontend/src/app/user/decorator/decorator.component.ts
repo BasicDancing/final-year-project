@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DecoratorComponent implements OnInit {
 
+  numbers = Array(10);
+  title = "Decorator";
+
   constructor() { }
 
   ngOnInit(): void {

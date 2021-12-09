@@ -22,16 +22,6 @@ public class PhotographerService {
     @Autowired
     private AgeConverter ageConverter;
 
-    //POST
-    public Photographer createPhotographer(Photographer photographer){
-        photographer.setPresentAddress(addressService.createAddress(photographer.getPresentAddress()));
-        photographer.setPermanentAddress(addressService.createAddress(photographer.getPermanentAddress()));
-        photographer.setAge(ageConverter.age(photographer.getDateOfBirth()));
-        photographer.setCreatedOn(Instant.now());
-        return photographerRepository.save(photographer);
-        //return photographer;
-    }
-
     //GET
     public Photographer findPhotographer(Long id){
         return photographerRepository.findById(id).orElse(null);
@@ -48,6 +38,7 @@ public class PhotographerService {
         Photographer exPhotographer = photographerRepository.findById(photographer.getId()).orElse(null);
 
         assert exPhotographer != null;
+        exPhotographer.setProfession(photographer.getProfession());
         exPhotographer.setFullName(photographer.getFullName());
         exPhotographer.setCurrentStatus(photographer.getCurrentStatus());
         exPhotographer.setCellphone(photographer.getCellphone());

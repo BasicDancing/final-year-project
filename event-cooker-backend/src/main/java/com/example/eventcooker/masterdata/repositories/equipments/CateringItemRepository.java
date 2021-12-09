@@ -1,4 +1,4 @@
 package com.example.eventcooker.masterdata.repositories.equipments;
 
-public interface PhotographerEquipmentRepositories {
+public interface CateringItemRepository {
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Photographer } from '../../../master-data/user/photographer/photographer';
+import { User } from '../../../master-data/user/user';
 import { PhotographerService } from '../../../master-data/user/photographer/photographer.service';
 
 
@@ -11,7 +11,7 @@ import { PhotographerService } from '../../../master-data/user/photographer/phot
 })
 export class PhotographerComponent implements OnInit {
 
-  photographers: Photographer[];
+  photographers: User[];
   
   constructor(
     private photographerService: PhotographerService

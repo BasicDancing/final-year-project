@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CinematographerComponent implements OnInit {
 
-  constructor() { }
+  numbers = Array(10);
+  title = "Cinematographer";
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

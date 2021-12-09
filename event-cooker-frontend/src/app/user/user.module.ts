@@ -23,6 +23,8 @@ import { CateringComponent } from './catering/catering.component';
 import { MusicianComponent } from './musician/musician.component';
 import { VoiceArtistComponent } from './voice-artist/voice-artist.component';
 import { DancerComponent } from './dancer/dancer.component';
+import { UserAllProfileComponent } from '../master-data/reuseable-component/user-all-profile/user-all-profile.component';
+import { UserProfileComponent } from '../master-data/reuseable-component/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { DancerComponent } from './dancer/dancer.component';
     MusicianComponent,
     VoiceArtistComponent,
     DancerComponent,
+    UserAllProfileComponent,
+    UserProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +56,6 @@ import { DancerComponent } from './dancer/dancer.component';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule,
     MatIconModule,
     MatCardModule,
     MatBadgeModule

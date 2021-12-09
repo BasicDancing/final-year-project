@@ -124,4 +124,13 @@ public class UserAllInfo {
 
     @Column(name = "privateDataSensitive")
     private boolean privateDataSensitive;
+
+    @Column(name = "userPassword")
+    private String userPassword;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "profession")
+    private String profession;
 }

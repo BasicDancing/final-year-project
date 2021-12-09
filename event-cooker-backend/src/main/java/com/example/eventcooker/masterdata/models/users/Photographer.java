@@ -30,6 +30,9 @@ public class Photographer implements Serializable {
     )
     private Long id;
 
+    @Column(name = "profession")
+    private String profession;
+
     @Column(name = "fullName", length = 255)
     private String fullName;
 

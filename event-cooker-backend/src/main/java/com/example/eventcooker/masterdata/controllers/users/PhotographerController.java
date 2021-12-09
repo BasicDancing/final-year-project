@@ -24,20 +24,6 @@ public class PhotographerController {
     @Autowired
     private PhotographerUtil photographerUtil;
 
-    @PostMapping("/add")
-    public @ResponseBody ResponseEntity<PhotographerUtil.PhotographerSerializer> savePhotographer(@RequestBody Photographer photographer){
-        try {
-            return new ResponseEntity<>(
-                    photographerUtil.photographerSerializer(photographerService.createPhotographer(photographer)),
-                    HttpStatus.OK
-            );
-        }catch (Exception e){
-            return new ResponseEntity<>(
-                    HttpStatus.NOT_ACCEPTABLE
-            );
-        }
-    }
-
     @GetMapping("/get/{id}")
     public @ResponseBody ResponseEntity<PhotographerUtil.PhotographerSerializer> getPhotographer(@PathVariable Long id){
         try {

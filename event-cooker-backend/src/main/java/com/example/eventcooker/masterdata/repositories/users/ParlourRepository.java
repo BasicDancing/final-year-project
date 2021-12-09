@@ -1,4 +1,5 @@
 package com.example.eventcooker.masterdata.repositories.users;
 
-public interface DancerRepositories {
+public interface ParlourRepository {
+
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserProfileComponent } from '../master-data/reuseable-component/user-profile/user-profile.component';
 import { CateringComponent } from './catering/catering.component';
 import { CinematographerComponent } from './cinematographer/cinematographer.component';
 import { DancerComponent } from './dancer/dancer.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'musician', component: MusicianComponent },
   { path: 'cinematographer', component: CinematographerComponent },
   { path: 'photographer', component: PhotographerComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: '/user/dashboard', pathMatch: 'full' },
 ];
 
