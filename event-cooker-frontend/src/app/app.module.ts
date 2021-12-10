@@ -8,18 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotComponent } from './forgot/forgot.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { FooterComponent } from './footer/footer.component';
-import { UserAllProfileComponent } from './master-data/reuseable-component/user-all-profile/user-all-profile.component';
-import { UserProfileComponent } from './master-data/reuseable-component/user-profile/user-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { JobsComponent } from './jobs/jobs.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { UserProfileComponent } from './master-data/reuseable-component/user-pro
     ForgotComponent,
     OurServicesComponent,
     FooterComponent,
-    //UserProfileComponent,
-    //UserAllProfileComponent,
+    NavbarComponent,
+    JobsComponent,
   ],
   imports: [
     BrowserModule,
