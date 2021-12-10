@@ -1,9 +1,16 @@
-<mat-drawer-container class="mat-container">
-    <mat-drawer class="bg-green-400" mode="side" [opened]="sideBarOpen">
-      <app-admin-sidenav></app-admin-sidenav>
-    </mat-drawer>
-    <mat-drawer-content>
-      <app-admin-navbar (toggleSidebarForMe)="sideBarToggler()"></app-admin-navbar>
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container> 
+<div>
+  <nav class="-ml-4">
+    <app-admin-navbar></app-admin-navbar>
+  </nav>
+  <main>
+    <div class="columns">
+      <div class="column1">
+          <app-admin-sidenav></app-admin-sidenav>
+      </div>
+      <div class="column2">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+</div>
+

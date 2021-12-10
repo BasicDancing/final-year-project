@@ -1,56 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-
-  <div class="mother">
-    <div id="home" class="container-fluid bg-gradient-to-b from-green-500 to-blue-400">
-      <!-- <nav class="flex justify-between">
-        <div class="left_side">
-          <a routerLink="/home" class="flex space-x-2 ml-4">
-            <img class="w-10 mr-2 bg mt-2 lg:mt-0" src="../../assets/img/home/brand.png" alt="">
-            <span class="mt-3 lg:mt-0 font-semibold text-xl tracking-tight" style="color: rgb(253, 209, 97); font-family: 'Lobster'; font-size: 30px;">Event Cooker</span>
-          </a>
+<div class="mt-40"></div>
+<main>
+  <!-- section hero -->
+  <section>
+    <div class="w-full">
+      <nav class="bg-white shadow-lg">
+        <div class="md:flex items-center justify-between py-2 px-8 md:px-12">
+          <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800 md:text-3xl">
+              <a href="#">Brand</a>
+            </div>
+            <div class="md:hidden">
+              <button type="button"
+                class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                  <path class="hidden"
+                    d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z" />
+                  <path
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-    
-        <div class="middle_side flex space-x-4 px-3">
-            <a routerLink (click)="onClick('home')" class="mt-4 lg:mt-0">Home</a>
-            <a routerLink (click)="onClick('services')" class="mt-4 lg:mt-0">Service</a>
-            <a routerLink (click)="onClick('details')" class="mt-4 lg:mt-0">Contact</a>
-            <a routerLink (click)="onClick('details')" class="mt-4 lg:mt-0">Details</a>
+      </nav>
+      <div class="flex bg-white" style="height:600px;">
+        <div class="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
+          <div>
+            <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl">Build Your New <span
+                class="text-indigo-600">Idea</span></h2>
+            <p class="mt-2 text-sm text-gray-500 md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Blanditiis commodi cum cupiditate ducimus, fugit harum id necessitatibus odio quam quasi, quibusdam rem
+              tempora voluptates. Cumque debitis dignissimos id quam vel!</p>
+            <div class="flex justify-center lg:justify-start mt-6">
+              <a class="px-4 py-3 bg-gray-900 text-gray-200 text-xs font-semibold rounded hover:bg-gray-800"
+                href="#">Get Started</a>
+              <a class="mx-4 px-4 py-3 bg-gray-300 text-gray-900 text-xs font-semibold rounded hover:bg-gray-400"
+                href="#">Learn More</a>
+            </div>
+          </div>
         </div>
-    
-        <div class="right_side flex space-x-4 mr-4">
-          <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" routerLink="/login" routerLinkActive="router-link-active" >Log In</a>
-          <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" routerLink="/user" routerLinkActive="router-link-active" >User</a>
-          <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" routerLink="/admin" routerLinkActive="router-link-active" >Admin</a>
-        </div>
-      </nav> -->
-    
-      <div class="intro container-fluid lg:p-10">
-        <span class="font-bold text-5xl text-uppercase text-yellow-50">A Place, You can arrange all event by Event Cooker</span>
-        <div class="intro-bottom text-white">
-          <p class="text-xl">
-            Here you have found here, all professional photographers, cinematographer, musician, dance team, beauty parlour, catering, voice artist and decorator. You can also be a part of our community, go with "be a freelancer" below.
-          </p>
-          <div class="bottom-button mt-10 flex justify-end">
-            <button class="py-2 px-4 shadow-sm text-sm font-medium rounded-md text-white bg-green-400 ml-4 text-uppercase" routerLink="/register">Become a freelancer</button>
+        <div class="hidden lg:block lg:w-1/2" style="clip-path:polygon(10% 0, 100% 0%, 100% 100%, 0 100%)">
+          <div class="h-full object-cover"
+            style="background-image: url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)">
+            <div class="h-full bg-black opacity-25"></div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+  <section>
     <div id="services">
       <app-our-services></app-our-services>
     </div>
+  </section>
+  <section>
     <div id="details" class="footer">
       <app-footer></app-footer>
     </div>
-  </div>
-
-</body>
-</html>
+  </section>
+</main>

@@ -1,19 +1,18 @@
-:host {
+.columns {
     display: flex;
-    flex-direction: column;
-    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 160px;
+}
+  
+.column1 {
+    flex: 20%;
+    display: block;
 }
 
-mat-drawer {
-    width: 250px;
-    border: 0;
-}
-
-mat-drawer-container {
-    height: 100%;
-}
-
-.mat-drawer-container{
-    background-color: #fafafa;
-    color: rgba(0,0,0,.87);
+.column2 {
+    flex: 80%;
+    width: fit-content;
+    text-align: center;
 }
