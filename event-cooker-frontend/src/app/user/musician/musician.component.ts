@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MusicianComponent implements OnInit {
 
-  numbers = Array(10);
+  users = Array(10);
   title = "Musician";
 
   constructor() { }

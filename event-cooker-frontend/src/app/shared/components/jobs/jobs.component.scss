@@ -1,0 +1,34 @@
+.columns {
+  display: flex;
+  width: 100%;
+  margin-top: 120px;
+}
+
+.column1 {
+  flex: 20%;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.column2 {
+  flex: 60%;
+  margin: 0 21% 0 21%;
+}
+
+.column3 {
+  flex: 20%;
+  margin: 0 0 0 80%;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -10,17 +10,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { EquipmentManagementComponent } from './equipment-management/equipment-management.component';
 import { GeographyManagementComponent } from './geography-management/geography-management.component';
 import { MatCardModule } from '@angular/material/card';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     AdminComponent,
     AdminDashboardComponent,
-    AdminNavbarComponent,
     AdminSidenavComponent,
     EquipmentManagementComponent,
     GeographyManagementComponent,
@@ -28,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     CommonModule,
     AdminRoutingModule,
+    SharedModule,
 
     //Material Ui
     MatCardModule,

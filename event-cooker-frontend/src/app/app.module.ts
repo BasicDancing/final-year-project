@@ -18,11 +18,6 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { JobsComponent } from './jobs/jobs.component';
-import { JobFeedLeftComponent } from './job-feed-left/job-feed-left.component';
-import { JobFeedMiddleComponent } from './job-feed-middle/job-feed-middle.component';
-import { JobFeedRightComponent } from './job-feed-right/job-feed-right.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +28,13 @@ import { JobFeedRightComponent } from './job-feed-right/job-feed-right.component
     ForgotComponent,
     OurServicesComponent,
     FooterComponent,
-    NavbarComponent,
-    JobsComponent,
-    JobFeedLeftComponent,
-    JobFeedMiddleComponent,
-    JobFeedRightComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-  
+
     //Bootstrap
     NgbModule,
 

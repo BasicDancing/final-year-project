@@ -10,7 +10,7 @@ import { PhotographerService } from '../../master-data/user/photographer/photogr
 })
 export class PhotographerComponent implements OnInit {
 
-  photographers: User[];
+  users: User[];
   title = "Photographer";
   
   constructor(
@@ -25,8 +25,8 @@ export class PhotographerComponent implements OnInit {
     console.log("Worked")
     this.photographerService.getAll().subscribe(
       data => {
-        this.photographers = data;
-        console.log(this.photographers);
+        this.users = data;
+        console.log(this.users);
       }
     );
   }

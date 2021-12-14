@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { HomeComponent } from './home/home.component';
-import { JobsComponent } from './jobs/jobs.component';
 import { LoginComponent } from './login/login.component';
-import { UserProfileComponent } from './master-data/reuseable-component/user-profile/user-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 
@@ -26,7 +24,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'services', component: HomeComponent },
   { path: 'details', component: HomeComponent },
-  { path: 'jobs', component: JobsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 @NgModule({

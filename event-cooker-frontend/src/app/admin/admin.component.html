@@ -1,13 +1,13 @@
-<div>
-  <nav class="-ml-4">
-    <app-admin-navbar></app-admin-navbar>
+<div class="app">
+  <nav>
+    <app-navbar [navLinks]="navLinks"></app-navbar>
   </nav>
   <main>
     <div class="columns">
       <div class="column1">
           <app-admin-sidenav></app-admin-sidenav>
       </div>
-      <div class="column2">
+      <div class="column2 lg:w-10">
         <router-outlet></router-outlet>
       </div>
     </div>

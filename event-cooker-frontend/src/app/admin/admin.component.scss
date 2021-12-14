@@ -1,18 +1,22 @@
 .columns {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
-    margin-top: 160px;
+    margin-top: 100px;
 }
-  
+
 .column1 {
     flex: 20%;
-    display: block;
+    overflow-y: scroll;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .column2 {
     flex: 80%;
-    width: fit-content;
-    text-align: center;
+    margin-left: 20%;
 }

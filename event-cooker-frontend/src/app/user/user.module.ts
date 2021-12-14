@@ -7,13 +7,11 @@ import { PhotographerComponent } from './photographer/photographer.component';
 import { UserComponent } from './user.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { MatCardModule } from '@angular/material/card';
-import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -23,8 +21,7 @@ import { CateringComponent } from './catering/catering.component';
 import { MusicianComponent } from './musician/musician.component';
 import { VoiceArtistComponent } from './voice-artist/voice-artist.component';
 import { DancerComponent } from './dancer/dancer.component';
-import { UserAllProfileComponent } from '../master-data/reuseable-component/user-all-profile/user-all-profile.component';
-import { UserProfileComponent } from '../master-data/reuseable-component/user-profile/user-profile.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +29,6 @@ import { UserProfileComponent } from '../master-data/reuseable-component/user-pr
     CinematographerComponent,
     PhotographerComponent,
     UserDashboardComponent,
-    UserNavbarComponent,
     UserHomeComponent,
     ParlourComponent,
     DecoratorComponent,
@@ -40,12 +36,11 @@ import { UserProfileComponent } from '../master-data/reuseable-component/user-pr
     MusicianComponent,
     VoiceArtistComponent,
     DancerComponent,
-    UserAllProfileComponent,
-    UserProfileComponent,
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
+    SharedModule,
 
     //Bootstrap
     NgbModule,
@@ -59,6 +54,6 @@ import { UserProfileComponent } from '../master-data/reuseable-component/user-pr
     MatIconModule,
     MatCardModule,
     MatBadgeModule
-  ]
+  ],
 })
 export class UserModule { }
