@@ -33,9 +33,9 @@ public class UserAllInfoUtil {
     }
 
     public void professionChecking(UserAllInfo userAllInfo){
-        if(Objects.equals(userAllInfo.getProfession(), "photographer")){
+        if(Objects.equals(userAllInfo.getProfession(), "Photographer")){
             Photographer photographer = new Photographer();
-            photographer.setProfession("Photographer");
+            photographer.setProfession(userAllInfo.getProfession());
             photographer.setFullName(userAllInfo.getFullName());
             photographer.setEmail(userAllInfo.getEmail());
             userAllInfo.setUserId(createPhotographer(photographer).getId());

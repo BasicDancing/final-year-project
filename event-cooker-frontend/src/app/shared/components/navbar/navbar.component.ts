@@ -15,6 +15,10 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.reload();
+  }
+
+  reload(){
     this.dropOptions = this.navLinks.dropOptions;
     this.navOptions = this.navLinks.navOptions;
   }
