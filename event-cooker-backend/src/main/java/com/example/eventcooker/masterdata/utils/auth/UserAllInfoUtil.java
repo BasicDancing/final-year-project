@@ -25,15 +25,12 @@ public class UserAllInfoUtil {
 
     //POST
     public Photographer createPhotographer(Photographer photographer){
-        photographer.setPresentAddress(addressService.createAddress(photographer.getPresentAddress()));
-        photographer.setPermanentAddress(addressService.createAddress(photographer.getPermanentAddress()));
-        photographer.setAge(ageConverter.age(photographer.getDateOfBirth()));
         photographer.setCreatedOn(Instant.now());
         return photographerRepository.save(photographer);
     }
 
     public void professionChecking(UserAllInfo userAllInfo){
-        if(Objects.equals(userAllInfo.getProfession(), "Photographer")){
+        if(userAllInfo.getProfession().equals("Photographer")){
             Photographer photographer = new Photographer();
             photographer.setProfession(userAllInfo.getProfession());
             photographer.setFullName(userAllInfo.getFullName());

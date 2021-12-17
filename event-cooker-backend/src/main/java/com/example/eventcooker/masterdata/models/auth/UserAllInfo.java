@@ -86,7 +86,7 @@ public class UserAllInfo {
     @Column(name = "securityDescriptor")
     private String securityDescriptor;
 
-    @Column(name = "userId")
+    @Column(unique=true, name = "userId")
     private long userId;
 
     @Column(name = "primaryGroupId")

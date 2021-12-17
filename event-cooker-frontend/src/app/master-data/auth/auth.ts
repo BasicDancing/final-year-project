@@ -1,8 +1,10 @@
 export class Auth{
 
     id: number;
-    fullName: string;
-    userPassword: string;
-    email: string;
     profession: string;
+    fullName: string;
+    userName: string;
+    email: string;
+    userId: number;
+    userPassword: string;
 }
