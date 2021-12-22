@@ -15,5 +15,11 @@ export class UserDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
+
+  titleSave(title: string){
+    localStorage.setItem('title', title);
+  }
+
 }

@@ -9,12 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   user: any;
+  equipments: Array<any> = new Array(10)
 
   constructor(private location: Location) { }
 
   ngOnInit(): void {
-    this.user = this.location.getState();
-    this.user = this.user.user;
-    console.log(this.user.user);
+    // this.user = this.location.getState();
+    // this.user = this.user.user;
+    // console.log(this.user.user);
   }
 }

@@ -2,14 +2,10 @@ package com.example.eventcooker.masterdata.controllers.geography;
 
 import com.example.eventcooker.masterdata.models.geography.Address;
 import com.example.eventcooker.masterdata.services.geography.AddressService;
-import com.example.eventcooker.masterdata.utils.geography.SerializerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -19,10 +15,7 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
-    @Autowired
-    private SerializerUtil serializerUtil;
-
-    @PostMapping("/add")
+    @PostMapping("/")
     public @ResponseBody
     ResponseEntity<Address> saveAddress(@RequestBody Address address){
         try {
@@ -37,15 +30,11 @@ public class AddressController {
         }
     }
 
-    @GetMapping("/get-all")
-    public @ResponseBody ResponseEntity<List<SerializerUtil.AddressSerializer>> getAddresss(){
+    @GetMapping("/{id}")
+    public @ResponseBody ResponseEntity<Address> getAddress(@PathVariable Long id){
         try {
-            List<SerializerUtil.AddressSerializer> serializers = new ArrayList<>();
-            for (Address address: addressService.findAddresss()){
-                serializers.add(serializerUtil.addressSerializer(address));
-            }
             return new ResponseEntity<>(
-                    serializers,
+                    addressService.findAddress(id),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -55,11 +44,11 @@ public class AddressController {
         }
     }
 
-    @PutMapping("/update")
-    public @ResponseBody ResponseEntity<Address> changeAddress(@RequestBody Address address){
+    @PutMapping("/{id}")
+    public @ResponseBody ResponseEntity<Address> changeAddress(@PathVariable Long id, @RequestBody Address address){
         try {
             return new ResponseEntity<>(
-                    addressService.updateAddress(address),
+                    addressService.updateAddress(id, address),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -69,7 +58,7 @@ public class AddressController {
         }
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public @ResponseBody ResponseEntity<String> deleteAddress(@PathVariable Long id){
         try {
             return new ResponseEntity<>(

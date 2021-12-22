@@ -37,13 +37,15 @@ public class UserAllInfoService {
     }
 
     //PUT
-    public UserAllInfo updateUserAllInfo(UserAllInfo userAllInfo){
+    public UserAllInfo updateUserAllInfo(Long id, UserAllInfo userAllInfo){
 
-        UserAllInfo exUserAllInfo = userAllInfoRepository.findById(userAllInfo.getId()).orElse(null);
+        UserAllInfo exUserAllInfo = userAllInfoRepository.findById(id).orElse(null);
 
         assert exUserAllInfo != null;
-        exUserAllInfo.setUserName(userAllInfo.getUserName());
-        exUserAllInfo.setUserPassword(userAllInfo.getUserPassword());
+        if(userAllInfo.getUserName() != null)
+            exUserAllInfo.setUserName(userAllInfo.getUserName());
+        if(userAllInfo.getUserPassword() != null)
+            exUserAllInfo.setUserPassword(userAllInfo.getUserPassword());
 
         return userAllInfoRepository.save(exUserAllInfo);
     }

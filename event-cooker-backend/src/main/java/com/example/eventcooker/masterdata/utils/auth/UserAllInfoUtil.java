@@ -1,41 +1,30 @@
 package com.example.eventcooker.masterdata.utils.auth;
 
 import com.example.eventcooker.masterdata.models.auth.UserAllInfo;
-import com.example.eventcooker.masterdata.models.users.Photographer;
-import com.example.eventcooker.masterdata.repositories.users.PhotographerRepository;
-import com.example.eventcooker.masterdata.services.geography.AddressService;
-import com.example.eventcooker.masterdata.utils.AgeConverter;
+import com.example.eventcooker.user.models.User;
+import com.example.eventcooker.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.util.Objects;
 
 @Service
 public class UserAllInfoUtil {
 
     @Autowired
-    private PhotographerRepository photographerRepository;
-
-    @Autowired
-    private AddressService addressService;
-
-    @Autowired
-    private AgeConverter ageConverter;
+    private UserRepository userRepository;
 
     //POST
-    public Photographer createPhotographer(Photographer photographer){
-        photographer.setCreatedOn(Instant.now());
-        return photographerRepository.save(photographer);
+    public User createUser(User user){
+        user.setCreatedOn(Instant.now());
+        return userRepository.save(user);
     }
 
     public void professionChecking(UserAllInfo userAllInfo){
-        if(userAllInfo.getProfession().equals("Photographer")){
-            Photographer photographer = new Photographer();
-            photographer.setProfession(userAllInfo.getProfession());
-            photographer.setFullName(userAllInfo.getFullName());
-            photographer.setEmail(userAllInfo.getEmail());
-            userAllInfo.setUserId(createPhotographer(photographer).getId());
-        }
+            User user = new User();
+            user.setProfession(userAllInfo.getProfession());
+            user.setFullName(userAllInfo.getFullName());
+            user.setEmail(userAllInfo.getEmail());
+            userAllInfo.setUserId(createUser(user).getId());
     }
 }

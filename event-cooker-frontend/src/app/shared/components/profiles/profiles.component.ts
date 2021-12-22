@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from 'src/app/master-data/user/user.service';
 
 @Component({
   selector: 'app-profiles',
@@ -7,12 +8,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProfilesComponent implements OnInit {
 
-  @Input() users: Array<any>;
-  @Input() title: string;
+  users: Array<any>;
+  title: any;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+  ) { }
 
   ngOnInit(): void {
+    this.title = localStorage.getItem('title');
+    console.log(localStorage.getItem('title'));
+    this.professional(this.title);
+  }
+
+  professional(title: string){
+    this.userService.getProfessonal(title).subscribe(
+      (data) => {
+        this.users = data;
+        console.log(this.users);
+      }
+    );
   }
 
 }

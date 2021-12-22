@@ -6,14 +6,14 @@
   
     <ngb-carousel class="container">
         <ng-template ngbSlide *ngFor="let image of images">
-            <a routerLink="{{ image.link }}">
+            <a routerLink="/user/profiles" (click)="titleSave(image.title)">
                 <div class="flex justify-center">
                     <div class="wrapper">
-                        <img [src]="image.src" alt="Random first slide">
+                        <img class="opacity-70" [src]="image.photo" alt="Random first slide">
                     </div>
                     <div class="carousel-caption">
-                        <h3>{{ image.title }}</h3>
-                        <p>{{ image.short }}</p>
+                        <h1>{{ image.title }}</h1>
+                        <p>{{ image.description }}</p>
                     </div>
                 </div>
             </a>

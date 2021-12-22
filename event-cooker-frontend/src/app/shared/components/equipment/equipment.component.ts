@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-equipment',
@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipmentComponent implements OnInit {
 
-  equipments: Array<any> = new Array(10);
+  @Input() equipments: Array<any>;
+  display = "none";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openModal() {
+    this.display = "block";
+  }
+  onCloseHandled() {
+    this.display = "none";
+  }
 }

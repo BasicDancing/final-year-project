@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -11,8 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
-import { EquipmentManagementComponent } from './equipment-management/equipment-management.component';
-import { GeographyManagementComponent } from './geography-management/geography-management.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
 
@@ -21,8 +18,6 @@ import { SharedModule } from '../shared/shared.module';
     AdminComponent,
     AdminDashboardComponent,
     AdminSidenavComponent,
-    EquipmentManagementComponent,
-    GeographyManagementComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +26,6 @@ import { SharedModule } from '../shared/shared.module';
 
     //Material Ui
     MatCardModule,
-    MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
     MatListModule,

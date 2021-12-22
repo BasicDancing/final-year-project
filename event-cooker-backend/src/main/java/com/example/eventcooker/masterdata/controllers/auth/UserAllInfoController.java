@@ -18,10 +18,17 @@ public class UserAllInfoController {
     @Autowired
     private UserAllInfoService userAllInfoService;
 
-    @PostMapping("/add")
-    public @ResponseBody
-    ResponseEntity<UserAllInfo> saveUserAllInfo(@RequestBody UserAllInfo userAllInfo){
+    @PostMapping("/")
+    public @ResponseBody ResponseEntity<?> saveUserAllInfo(@RequestBody UserAllInfo userAllInfo){
         try {
+            UserAllInfo userAllInfo1 = userAllInfoService.findUserAllInfoByUserName(userAllInfo.getUserName());
+            if(userAllInfo1 != null){
+                return new ResponseEntity<>(
+                        "Username already exist!!",
+                        HttpStatus.NOT_FOUND
+                );
+            }
+
             return new ResponseEntity<>(
                     userAllInfoService.createUserAllInfo(userAllInfo),
                     HttpStatus.OK
@@ -33,21 +40,7 @@ public class UserAllInfoController {
         }
     }
 
-    @GetMapping("/get/id={id}")
-    public @ResponseBody ResponseEntity<UserAllInfo> getUserAllInfo(@PathVariable Long id){
-        try {
-            return new ResponseEntity<>(
-                    userAllInfoService.findUserAllInfo(id),
-                    HttpStatus.OK
-            );
-        }catch (Exception e){
-            return new ResponseEntity<>(
-                    HttpStatus.NOT_FOUND
-            );
-        }
-    }
-
-    @GetMapping("/get/username={userName}")
+    @GetMapping("/user/{userName}")
     public @ResponseBody ResponseEntity<UserAllInfo> getUserAllInfoByUserName(@PathVariable String userName){
         try {
             return new ResponseEntity<>(
@@ -61,11 +54,11 @@ public class UserAllInfoController {
         }
     }
 
-    @GetMapping("/get-all")
-    public @ResponseBody ResponseEntity<List<UserAllInfo>> getUserAllInfos(){
+    @GetMapping("/{id}")
+    public @ResponseBody ResponseEntity<UserAllInfo> getUserAllInfo(@PathVariable Long id){
         try {
             return new ResponseEntity<>(
-                    userAllInfoService.findUserAllInfos(),
+                    userAllInfoService.findUserAllInfo(id),
                     HttpStatus.OK
             );
         }catch (Exception e){
@@ -75,11 +68,19 @@ public class UserAllInfoController {
         }
     }
 
-    @PutMapping("/update")
-    public @ResponseBody ResponseEntity<UserAllInfo> changeUserAllInfo(@RequestBody UserAllInfo userAllInfo){
+
+    @PutMapping("/{id}")
+    public @ResponseBody ResponseEntity<?> changeUserAllInfo(@PathVariable Long id, @RequestBody UserAllInfo userAllInfo){
         try {
+            UserAllInfo userAllInfo1 = userAllInfoService.findUserAllInfoByUserName(userAllInfo.getUserName());
+            if(userAllInfo1 != null){
+                return new ResponseEntity<>(
+                        "Username already exist!!",
+                        HttpStatus.NOT_FOUND
+                );
+            }
             return new ResponseEntity<>(
-                    userAllInfoService.updateUserAllInfo(userAllInfo),
+                    userAllInfoService.updateUserAllInfo(id, userAllInfo),
                     HttpStatus.OK
             );
         }catch (Exception e){

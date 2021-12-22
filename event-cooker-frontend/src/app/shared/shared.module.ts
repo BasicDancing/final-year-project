@@ -14,6 +14,10 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { JobFeedLeftComponent } from './components/job-feed-left/job-feed-left.component';
 import { JobFeedMiddleComponent } from './components/job-feed-middle/job-feed-middle.component';
 import { JobFeedRightComponent } from './components/job-feed-right/job-feed-right.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { EquipmentDetailsComponent } from './components/equipment-details/equipment-details.component';
+import { MassagesComponent } from './components/massages/massages.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 @NgModule({
@@ -29,6 +33,10 @@ import { JobFeedRightComponent } from './components/job-feed-right/job-feed-righ
     JobFeedLeftComponent,
     JobFeedMiddleComponent,
     JobFeedRightComponent,
+    JobDetailsComponent,
+    EquipmentDetailsComponent,
+    MassagesComponent,
+    SettingsComponent,
   ],
   imports: [
     CommonModule,

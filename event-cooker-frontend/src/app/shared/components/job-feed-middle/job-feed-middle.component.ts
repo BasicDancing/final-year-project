@@ -8,10 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class JobFeedMiddleComponent implements OnInit {
 
   @Input() posts: Array<any>;
+  display = "none";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openModal() {
+    this.display = "block";
+  }
+  onCloseHandled() {
+    this.display = "none";
+  }
 }

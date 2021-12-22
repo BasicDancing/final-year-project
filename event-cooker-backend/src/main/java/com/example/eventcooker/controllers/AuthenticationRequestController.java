@@ -5,16 +5,15 @@ import com.example.eventcooker.models.AuthenticationResponse;
 import com.example.eventcooker.services.MyUserDetailsService;
 import com.example.eventcooker.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 public class AuthenticationRequestController {
     @Autowired
@@ -46,6 +45,13 @@ public class AuthenticationRequestController {
 
         final UserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
+
+        if(userDetails == null){
+            return new ResponseEntity<>(
+                    "User not found!",
+                    HttpStatus.NOT_FOUND
+            );
+        }
 
         final String jwt = jwtTokenUtil.generateToken(userDetails);
 

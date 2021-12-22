@@ -2,7 +2,6 @@ package com.example.eventcooker.masterdata.services.geography;
 
 import com.example.eventcooker.masterdata.models.geography.Address;
 import com.example.eventcooker.masterdata.repositories.geography.AddressRepository;
-import com.example.eventcooker.masterdata.utils.geography.AddressUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,36 +13,34 @@ public class AddressService {
     @Autowired
     private AddressRepository addressRepository;
 
-    @Autowired
-    private AddressUtil addressUtil;
-
     //POST
     public Address createAddress(Address address){
-        addressUtil.placeFind(address);
         return addressRepository.save(address);
-        //return address;
     }
 
     //GET ALL
-    public List<Address> findAddresss(){
-        return addressRepository.findAll();
+    public Address findAddress(Long id){
+        return addressRepository.findById(id).orElse(null);
     }
 
     //PUT
-    public Address updateAddress(Address address){
+    public Address updateAddress(Long id, Address address){
 
-        Address exAddress = addressRepository.findById(address.getId()).orElse(null);
+        Address exAddress = addressRepository.findById(id).orElse(null);
 
         assert exAddress != null;
-        exAddress.setStreet(address.getStreet());
-        exAddress.setPostOffice(address.getPostOffice());
-        exAddress.setPostalCode(address.getPostalCode());
-
-        addressUtil.placeFind(address);
-
-        exAddress.setDivision(address.getDivision());
-        exAddress.setDistrict(address.getDistrict());
-        exAddress.setUpazila(address.getUpazila());
+        if(address.getStreet() != null)
+            exAddress.setStreet(address.getStreet());
+        if(address.getPostOffice() != null)
+            exAddress.setPostOffice(address.getPostOffice());
+        if(address.getPostalCode() != null)
+            exAddress.setPostalCode(address.getPostalCode());
+        if(address.getDivision() != null)
+            exAddress.setDivision(address.getDivision());
+        if(address.getDistrict() != null)
+            exAddress.setDistrict(address.getDistrict());
+        if(address.getUpazila() != null)
+            exAddress.setUpazila(address.getUpazila());
 
         return addressRepository.save(exAddress);
         //return exAddress;
