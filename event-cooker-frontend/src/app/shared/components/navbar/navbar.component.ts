@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbNavLink } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from 'src/app/master-data/user/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +12,8 @@ export class NavbarComponent implements OnInit {
   dropOptions: any;
   navOptions: any;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
     this.reload();
@@ -22,5 +23,4 @@ export class NavbarComponent implements OnInit {
     this.dropOptions = this.navLinks.dropOptions;
     this.navOptions = this.navLinks.navOptions;
   }
-
 }

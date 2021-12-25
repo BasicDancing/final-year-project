@@ -14,7 +14,11 @@ export class User{
     bloodGroup: string;
     maritialStatus: string;
     workPhone: string;
-    photo: Blob;
+    about: string;
+    photo: string;
+    rating: number;
+    description: string;
+    website: string;
     createdOn: Date;
     createdBy: string;
     modifiedOn: Date;

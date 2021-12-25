@@ -18,6 +18,9 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
 import { EquipmentDetailsComponent } from './components/equipment-details/equipment-details.component';
 import { MassagesComponent } from './components/massages/massages.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,10 +40,13 @@ import { SettingsComponent } from './components/settings/settings.component';
     EquipmentDetailsComponent,
     MassagesComponent,
     SettingsComponent,
+    EditProfileComponent,
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     //Mat
     MatDividerModule,

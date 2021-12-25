@@ -74,8 +74,10 @@ public class UserService {
             exUser.setWorkPhone(user.getWorkPhone());
         if(user.getPhoto() != null)
             exUser.setPhoto(user.getPhoto());
-        if(user.getPhoto() != null)
+        if(user.getAbout() != null)
             exUser.setAbout(user.getAbout());
+        if(user.getDescription() != null)
+            exUser.setDescription(user.getDescription());
         exUser.setModifiedOn(Instant.now());
         if(user.getModifiedBy() != null)
             exUser.setModifiedBy(user.getModifiedBy());

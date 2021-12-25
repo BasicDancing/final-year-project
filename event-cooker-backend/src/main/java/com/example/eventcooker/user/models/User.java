@@ -83,6 +83,12 @@ public class User {
     @Column(name = "rating")
     private int rating;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "website")
+    private String website;
+
     //Will be auto generated
     @Column(name = "createdOn")
     private Instant createdOn;

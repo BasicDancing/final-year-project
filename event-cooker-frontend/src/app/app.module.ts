@@ -19,8 +19,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TokenInterceptor } from './master-data/auth/token-inceptor';
-
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +30,7 @@ import { TokenInterceptor } from './master-data/auth/token-inceptor';
     ForgotComponent,
     OurServicesComponent,
     FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +50,7 @@ import { TokenInterceptor } from './master-data/auth/token-inceptor';
     MatDividerModule,
     MatIconModule,
     MatCardModule,
+    MatSnackBarModule,
   ],
   providers: [
     // {

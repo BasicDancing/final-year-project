@@ -16,7 +16,7 @@ export class UserService {
     return this.http.get(`${baseUrl}/`);
   }
 
-  public get(id: number): Observable<any> {
+  public get(id: string): Observable<any> {
     return this.http.get(`${baseUrl}/get/${id}`);
   }
 

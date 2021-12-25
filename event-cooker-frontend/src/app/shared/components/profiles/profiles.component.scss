@@ -11,3 +11,11 @@ mat-divider{
     border-color: black;
     margin-bottom: 40px;
 }
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(69, 231, 69);
+    border-radius: 50%;
+    display: inline-block;
+  }

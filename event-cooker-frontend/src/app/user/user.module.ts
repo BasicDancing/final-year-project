@@ -14,12 +14,14 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { SelfComponent } from './self/self.component';
 
 @NgModule({
   declarations: [
     UserComponent,
     UserHomeComponent,
     UserDashboardComponent,
+    SelfComponent,
   ],
   imports: [
     CommonModule,

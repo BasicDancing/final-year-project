@@ -13,7 +13,7 @@
         <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
     </div>
     <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
-        <form [formGroup]="userForm" (ngSubmit)="loginProfile()" class="bg-white">
+        <form [formGroup]="userForm" (ngSubmit)="loginProfile()" class="bg-white" *ngIf="!execute">
             <h1 class="text-gray-800 font-bold text-2xl mb-1">Hello Again!</h1>
             <p class="text-sm font-normal text-gray-600 mb-7">Welcome Back</p>
             <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -33,10 +33,12 @@
                 </svg>
                 <input formControlName="password" class="pl-2 outline-none border-none" type="password" name="" id="" placeholder="Password" />
             </div>
-            <button type="submit"
+            <button mat-stroked-button (click)="openSnackBar('')" type="submit"
                 class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Login</button>
-            <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer">Forgot Password ?</span>
-            <span routerLink="/register" class="border-1 border-blue-400 rounded-full p-1 text-sm ml-32 hover:text-blue-500 cursor-pointer">Sign Up</span>
+                <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer">Forgot Password ?</span>
+                <span routerLink="/register" class="border-1 border-blue-400 rounded-full p-1 text-sm ml-32 hover:text-blue-500 cursor-pointer">Sign Up</span>
         </form>
+            <button *ngIf="execute" routerLink="/user" type="submit"
+                class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Go Browse!</button>
     </div>
 </div>
