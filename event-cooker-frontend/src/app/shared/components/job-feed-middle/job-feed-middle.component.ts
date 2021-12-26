@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PostService } from 'src/app/master-data/post/post.service';
 
 @Component({
   selector: 'app-job-feed-middle',
@@ -7,12 +8,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class JobFeedMiddleComponent implements OnInit {
 
-  @Input() posts: Array<any>;
+  posts: Array<any>;
   display = "none";
 
-  constructor() { }
+  constructor(
+    private postService: PostService,
+  ) { }
 
   ngOnInit(): void {
+    this.loadPost();
+  }
+
+  loadPost(){
+    this.postService.getAll().subscribe(
+      (data) => {
+        this.posts = data;
+        this.posts.reverse();
+      }
+    );
   }
 
   openModal() {

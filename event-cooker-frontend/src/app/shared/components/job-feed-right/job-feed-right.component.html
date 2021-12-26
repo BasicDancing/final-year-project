@@ -1,60 +1,16 @@
 <div>
-    <!--Responsive Search form-->
-    <form class="md:hidden px-4 mt-16 mb-4">
-        <div class="relative">
-            <!--Search icon-->
-            <span class="absolute p-2 insert-y-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </span>
-            <input type="search" class="w-full px-8 py-1 border border-gray-300 focus:outline-none rounded-md">
-        </div>
-    </form>
-    <!--Dummy Posts-->
     <div>
-        <div class=" text-center text-gray-900 font-semibold text-2xl">The Nerds</div>
-        <div class="flex flex-col items-center my-6 ">
-
+        <div class=" text-center text-gray-900 font-semibold text-2xl">Top Proffesionals</div>
+        <div class="flex flex-col items-center my-6" *ngFor="let user of users">
             <!--First post-->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-1 my-3 max-w-md">
                 <div><img class="rounded-md w-screen md:w-48 h-48 object-contain"
-                        src="https://avatars.githubusercontent.com/u/463230?v=4" alt="Sarah dayan"></div>
+                        src="{{ user.photo }}" alt="{{ user.fullName }}"></div>
                 <div class="p-4 md:p-0">
-                    <div class="text-xl font-gray-900">Taylor Otwell</div>
-                    <div class="text-sm italic">Creator of PHP</div>
+                    <div class="text-xl font-gray-900">{{ user.fullName }}</div>
+                    <div class="text-lg italic">{{ user.profession }}</div>
                     <div class="text-sm">
-                        Chief Executive Officer at Laravel,independent software developer and creator of popular
-                        PHP Framework, Laravel
-                    </div>
-                </div>
-            </div>
-            <!--Second post-->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-1 my-3 max-w-md">
-                <div><img class="rounded-md w-screen md:w-48 h-48 object-contain"
-                        src="https://avatars.githubusercontent.com/u/499550?v=4" alt="Evan you"></div>
-                <div class="p-4 md:p-0">
-                    <div class="text-xl font-gray-900">Evan you</div>
-                    <div class="text-sm italic">Creator of Vuejs</div>
-                    <div class="text-sm">
-                        Hello. My name is Evan You. I am an independent software developer and the creator of
-                        the open source JavaScript framework Vue.js. Most of my work is open .
-                    </div>
-                </div>
-            </div>
-            <!--Third post-->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-1 my-3 max-w-md">
-                <div><img class="rounded-md w-screen  md:w-48 h-48 object-contain"
-                        src="https://inertiajs.com/img/jonathan.png" alt="Sarah dayan"></div>
-                <div class="p-4 md:p-0">
-                    <div class="text-xl font-gray-900">Jonathan Reinink</div>
-                    <div class="text-sm italic">Creator of inertiajs</div>
-                    <div class="text-sm">
-                        I'm a Staff Software Engineer currently working as Tech Lead of the Doc Squad at
-                        Algolia. I mostly do front-end development, and I'm a Vue. js and CSS nerd. I can't shut
-                        up about test-driven development and utility-first CSS.
+                        Awesome Creator!!
                     </div>
                 </div>
             </div>

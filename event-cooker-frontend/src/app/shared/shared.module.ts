@@ -21,6 +21,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostCreateComponent } from './components/post-create/post-create.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MassagesComponent,
     SettingsComponent,
     EditProfileComponent,
+    PostCreateComponent,
   ],
   imports: [
     CommonModule,

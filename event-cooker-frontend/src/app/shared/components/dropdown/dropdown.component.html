@@ -14,7 +14,7 @@
         <div id="event" *ngIf="show" class="bg-white rounded shadow-md absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30">
             <ul class="list-reset">
                 <li *ngFor="let option of dropOptions">
-                    <a routerLink="{{ option.link }}"
+                    <a routerLink="{{ option.link }}" (click)="logout(option.title)"
                         class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">{{
                         option.title }}</a>
                 </li>

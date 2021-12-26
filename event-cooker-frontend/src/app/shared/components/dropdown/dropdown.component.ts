@@ -44,7 +44,7 @@ export class DropdownComponent implements OnInit {
     );
   }
 
-  logout(){
-    localStorage.clear();
+  logout(name: string){
+    if(name == "Log Out")localStorage.clear();
   }
 }
