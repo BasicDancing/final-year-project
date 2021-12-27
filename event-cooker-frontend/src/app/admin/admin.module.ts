@@ -12,12 +12,16 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
+import { PostComponent } from './post/post.component';
+import { MatButtonModule } from '@angular/material/button';import { UserManageComponent } from './user-manage/user-manage.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     AdminDashboardComponent,
     AdminSidenavComponent,
+    PostComponent,
+    UserManageComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +35,7 @@ import { SharedModule } from '../shared/shared.module';
     MatListModule,
     MatDividerModule,
     MatIconModule,
+    MatButtonModule,
   ]
 })
 export class AdminModule { }

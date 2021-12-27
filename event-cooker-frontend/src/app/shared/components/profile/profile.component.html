@@ -2,28 +2,30 @@
     <section class="profile mt-40">
         <div class="w-11/12">
             <div class="flex justify-center pb-10">
-                <img src="{{user.photo}}" class="h-40 w-40 rounded-full object-cover" alt="{{user.fullName}}" />
+                <img src='{{user.photo || "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/104113705/original/6076831db34315e45bd2a31a9d79bb7b91d48e04/design-flat-style-minimalist-avatar-of-you.jpg"}}' class="h-40 w-40 rounded-full object-cover" alt="{{user.fullName}}" />
                 <div class="ml-10">
                     <div class="flex items-center">
                         <h2 class="block leading-relaxed font-light text-gray-700 text-3xl">{{user.fullName}}</h2>
                         <a class="btn btn-primary ml-2 mr-2" href="#" role="button">Massage</a>
                         <a class="btn btn-outline-primary mr-2" href="#" role="button">Follow</a>
                         <a class="btn btn-success mr-2" href="#" role="button">Hire</a>
-                        <button class="btn btn-warning" role="button" (click)="openModal()">Edit</button>
+                        <button *ngIf="idCheck(user.id)" class="btn btn-warning" role="button" (click)="openModal()">Edit</button>
 
                         <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+                                role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title">Profile Edit</h4>
-                                        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-                                                aria-hidden="true">&times;</span></button>
+                                        <button type="button" class="close" aria-label="Close"
+                                            (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                     <div class="modal-body">
                                         <app-edit-profile></app-edit-profile>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+                                        <button type="button" class="btn btn-default"
+                                            (click)="onCloseHandled()">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -42,23 +44,39 @@
                                 </span> followed</span>
                         </li>
                     </ul>
-                    <br>
-                    <div class="">
-                        <h1 class="text-base font-bold font-light">{{user.fullName}}</h1>
-                        <div class="about mb-5">
-                            <h3 class="">About</h3>
-                            <span class="text-base">{{user.about}}</span>
-                        </div>
-                        <div class="description">
-                            <h3>Decription</h3>
-                            <span class="text-base">{{user.description}}</span>
-                        </div>
+                </div>
+            </div>
+            <div class="personal_info mt-10">
+                <h1 class="text-base font-bold font-ligh text-center">{{user.fullName}}</h1>
+                
+                <div class="flex justify-content-around">
+                    <div class="about mb-5">
+                        <h3 class="font-bold">Present Address</h3>
+                        <span class="text-base">Dhaka, Bangladesh</span>
+                    </div>
+                    <div class="description">
+                        <h3 class="font-bold">Parmanent Address</h3>
+                        <span class="text-base">Bogura, Bangladesh</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-content-around">
+                    <div class="about mb-5">
+                        <h3 class="font-bold">About</h3>
+                        <span class="text-base">{{user.about}}</span>
+                    </div>
+                    <div class="description">
+                        <h3 class="font-bold">Decription</h3>
+                        <span class="text-base">{{user.description}}</span>
                     </div>
                 </div>
             </div>
             <div class="border-b border-gray-300 ml-20"></div>
             <article class="mt-5 ml-16 w-full">
-                <app-equipment [equipments]="equipments"></app-equipment>
+                <app-equipment></app-equipment>
+            </article>
+            <article class="mt-5 ml-16 w-full" *ngIf="idCheck(user.id)">
+                <app-post></app-post>
             </article>
         </div>
     </section>

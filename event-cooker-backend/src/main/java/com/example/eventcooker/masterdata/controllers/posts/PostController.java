@@ -90,6 +90,20 @@ public class PostController {
         }
     }
 
+    @PutMapping("/approve/{id}")
+    public @ResponseBody ResponseEntity<Post> changePost(@PathVariable Long id){
+        try {
+            return new ResponseEntity<>(
+                    postService.aprrovePost(id),
+                    HttpStatus.OK
+            );
+        }catch (Exception e){
+            return new ResponseEntity<>(
+                    HttpStatus.NOT_MODIFIED
+            );
+        }
+    }
+
     @DeleteMapping("/{id}")
     public @ResponseBody ResponseEntity<String> deletePost(@PathVariable Long id){
         try {

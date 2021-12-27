@@ -1,5 +1,6 @@
 package com.example.eventcooker.user.services;
 
+import com.example.eventcooker.masterdata.models.posts.Post;
 import com.example.eventcooker.masterdata.services.geography.AddressService;
 import com.example.eventcooker.masterdata.utils.AgeConverter;
 import com.example.eventcooker.user.models.User;
@@ -81,6 +82,17 @@ public class UserService {
         exUser.setModifiedOn(Instant.now());
         if(user.getModifiedBy() != null)
             exUser.setModifiedBy(user.getModifiedBy());
+
+        return userRepository.save(exUser);
+    }
+
+    public User aprroveUser(Long id){
+
+        User exUser = userRepository.findById(id).orElse(null);
+
+        assert exUser != null;
+        exUser.setApproval(!exUser.isApproval());
+        exUser.setModifiedOn(Instant.now());
 
         return userRepository.save(exUser);
     }

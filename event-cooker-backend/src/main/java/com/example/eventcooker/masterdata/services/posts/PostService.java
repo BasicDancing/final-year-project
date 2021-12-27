@@ -49,7 +49,21 @@ public class PostService {
         if(post.getUser() != null){
             exPost.setUser(post.getUser());
         }
-        post.setModifiedOn(Instant.now());
+        if(post.getClient() != null){
+            exPost.setClient(post.getClient());
+        }
+        exPost.setModifiedOn(Instant.now());
+
+        return postRepository.save(exPost);
+    }
+
+    public Post aprrovePost(Long id){
+
+        Post exPost = postRepository.findById(id).orElse(null);
+
+        assert exPost != null;
+        exPost.setApproval(true);
+        exPost.setModifiedOn(Instant.now());
 
         return postRepository.save(exPost);
     }

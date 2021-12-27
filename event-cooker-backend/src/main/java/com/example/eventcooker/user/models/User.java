@@ -89,6 +89,9 @@ public class User {
     @Column(name = "website")
     private String website;
 
+    @Column(name = "approval")
+    private boolean approval;
+
     //Will be auto generated
     @Column(name = "createdOn")
     private Instant createdOn;

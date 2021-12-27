@@ -32,7 +32,11 @@ export class PostService {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
 
-  public delete(id: number): Observable<any> {
+  public approve(id: string): Observable<object> {
+    return this.http.put(`${baseUrl}/approve/${id}`, null);
+  }
+
+  public delete(id: string): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 }

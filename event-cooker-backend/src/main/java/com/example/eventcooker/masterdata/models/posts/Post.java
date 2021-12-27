@@ -42,6 +42,9 @@ public class Post {
     @Column(name = "client")
     private Long client;
 
+    @Column(name = "approval")
+    private boolean approval;
+
     //Will be auto generated
     @Column(name = "createdOn")
     private Instant createdOn;

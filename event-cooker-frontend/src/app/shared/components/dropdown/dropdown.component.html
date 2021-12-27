@@ -1,7 +1,7 @@
 <div class="flex relative inline-block float-right">
     <div class="relative text-sm">
         <button (click)="toggle()" class="flex items-center focus:outline-none mr-3">
-            <img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User"> <span
+            <img class="w-8 h-8 rounded-full mr-4" src='{{user.photo || "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/104113705/original/6076831db34315e45bd2a31a9d79bb7b91d48e04/design-flat-style-minimalist-avatar-of-you.jpg"}}' alt="User"> <span
                 class="hidden md:inline-block">Hi, {{ user.fullName || 'User' }} </span>
             <svg class="pl-2 h-2" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129"
                 xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">

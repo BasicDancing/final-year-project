@@ -1,7 +1,8 @@
 export class User{
 
-    id: number;
+    id: string;
     fullName: string;
+    profession: string;
     currentStatus: string;
     cellphone: string;
     email: string;
@@ -19,6 +20,7 @@ export class User{
     rating: number;
     description: string;
     website: string;
+    approval: string;
     createdOn: Date;
     createdBy: string;
     modifiedOn: Date;

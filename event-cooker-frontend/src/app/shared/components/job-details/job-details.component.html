@@ -1,52 +1,27 @@
 <div class="modal-content border-0">
     <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptate perferendis libero omnis
-            debitis doloribus maxime, ex at quisquam in optio recusandae nobis alias ad nostrum reiciendis eaque
-            commodi sunt nam molestias hic animi cupiditate veniam! Dolorem enim culpa alias sunt deserunt
-            aliquam porro officiis assumenda dolores iusto voluptatum odio, ratione molestias ipsam ipsum quis
-            asperiores repudiandae corporis distinctio? Obcaecati velit quis nam enim consequuntur, adipisci
-            animi? Delectus voluptatem deleniti iure provident, praesentium architecto velit nesciunt asperiores
-            quos optio blanditiis in nisi commodi nulla magni, ducimus laborum. Eligendi qui minima nisi ea
-            veniam perferendis, esse saepe illum soluta deserunt in!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptate perferendis libero omnis
-            debitis doloribus maxime, ex at quisquam in optio recusandae nobis alias ad nostrum reiciendis eaque
-            commodi sunt nam molestias hic animi cupiditate veniam! Dolorem enim culpa alias sunt deserunt
-            aliquam porro officiis assumenda dolores iusto voluptatum odio, ratione molestias ipsam ipsum quis
-            asperiores repudiandae corporis distinctio? Obcaecati velit quis nam enim consequuntur, adipisci
-            animi? Delectus voluptatem deleniti iure provident, praesentium architecto velit nesciunt asperiores
-            quos optio blanditiis in nisi commodi nulla magni, ducimus laborum. Eligendi qui minima nisi ea
-            veniam perferendis, esse saepe illum soluta deserunt in!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptate perferendis libero omnis
-            debitis doloribus maxime, ex at quisquam in optio recusandae nobis alias ad nostrum reiciendis eaque
-            commodi sunt nam molestias hic animi cupiditate veniam! Dolorem enim culpa alias sunt deserunt
-            aliquam porro officiis assumenda dolores iusto voluptatum odio, ratione molestias ipsam ipsum quis
-            asperiores repudiandae corporis distinctio? Obcaecati velit quis nam enim consequuntur, adipisci
-            animi? Delectus voluptatem deleniti iure provident, praesentium architecto velit nesciunt asperiores
-            quos optio blanditiis in nisi commodi nulla magni, ducimus laborum. Eligendi qui minima nisi ea
-            veniam perferendis, esse saepe illum soluta deserunt in!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptate perferendis libero omnis
-            debitis doloribus maxime, ex at quisquam in optio recusandae nobis alias ad nostrum reiciendis eaque
-            commodi sunt nam molestias hic animi cupiditate veniam! Dolorem enim culpa alias sunt deserunt
-            aliquam porro officiis assumenda dolores iusto voluptatum odio, ratione molestias ipsam ipsum quis
-            asperiores repudiandae corporis distinctio? Obcaecati velit quis nam enim consequuntur, adipisci
-            animi? Delectus voluptatem deleniti iure provident, praesentium architecto velit nesciunt asperiores
-            quos optio blanditiis in nisi commodi nulla magni, ducimus laborum. Eligendi qui minima nisi ea
-            veniam perferendis, esse saepe illum soluta deserunt in!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptate perferendis libero omnis
-            debitis doloribus maxime, ex at quisquam in optio recusandae nobis alias ad nostrum reiciendis eaque
-            commodi sunt nam molestias hic animi cupiditate veniam! Dolorem enim culpa alias sunt deserunt
-            aliquam porro officiis assumenda dolores iusto voluptatum odio, ratione molestias ipsam ipsum quis
-            asperiores repudiandae corporis distinctio? Obcaecati velit quis nam enim consequuntur, adipisci
-            animi? Delectus voluptatem deleniti iure provident, praesentium architecto velit nesciunt asperiores
-            quos optio blanditiis in nisi commodi nulla magni, ducimus laborum. Eligendi qui minima nisi ea
-            veniam perferendis, esse saepe illum soluta deserunt in!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptate perferendis libero omnis
-            debitis doloribus maxime, ex at quisquam in optio recusandae nobis alias ad nostrum reiciendis eaque
-            commodi sunt nam molestias hic animi cupiditate veniam! Dolorem enim culpa alias sunt deserunt
-            aliquam porro officiis assumenda dolores iusto voluptatum odio, ratione molestias ipsam ipsum quis
-            asperiores repudiandae corporis distinctio? Obcaecati velit quis nam enim consequuntur, adipisci
-            animi? Delectus voluptatem deleniti iure provident, praesentium architecto velit nesciunt asperiores
-            quos optio blanditiis in nisi commodi nulla magni, ducimus laborum. Eligendi qui minima nisi ea
-            veniam perferendis, esse saepe illum soluta deserunt in!</p>
+        <img class="ml-48 w-96"
+            src='{{post.photo || "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/104113705/original/6076831db34315e45bd2a31a9d79bb7b91d48e04/design-flat-style-minimalist-avatar-of-you.jpg"}}'
+            alt="{{post.title}}">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ post.title }}</div>
+            <p class="text-gray-700 text-base">
+                {{ post.description }}
+            </p>
+        </div>
+        <div class="px-6 pt-4 pb-2 flex justify-between">
+            <div>
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+            </div>
+            <div class="ml-52">
+                <label class="font-bold">Created on: <span>{{ post.createdOn }}</span></label>
+            </div>
+        </div>
+        <button *ngIf="!idCheck(post.user)" class="btn btn-outline-primary text-center">Send Request</button>
     </div>
 </div>

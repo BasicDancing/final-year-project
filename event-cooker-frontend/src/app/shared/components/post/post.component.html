@@ -1,0 +1,33 @@
+<div class="mother font-bold m-32">
+    <div class="create_post mt-32">
+        <app-post-create></app-post-create>
+    </div>
+    <h1>My Posts</h1>
+    <div class="rounded overflow-hidden shadow-lg mb-5 w-full text-center" *ngFor="let post of posts">
+        <div class="main text-center mb-4" *ngIf="post.approval">
+            <button class="btn btn-warning float-right ml-2" (click)="deletePost(post.id)">Delete</button>
+            <button class="btn btn-outline-info float-right">Edit</button>
+            <img class="ml-48 w-96" src='{{post.photo || "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/104113705/original/6076831db34315e45bd2a31a9d79bb7b91d48e04/design-flat-style-minimalist-avatar-of-you.jpg"}}' alt="{{post.title}}">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{ post.title }}</div>
+                <p class="text-gray-700 text-base">
+                    {{ post.description }}
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2 flex justify-between">
+                <div>
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                    <span
+                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                </div>
+                <div class="ml-52">
+                    <label class="font-bold">Created on: <span>{{ post.createdOn }}</span></label>
+                </div>
+            </div>
+            <button *ngIf="!idCheck(post.user)" class="btn btn-outline-primary text-center">Send Request</button>
+        </div>
+    </div>
+</div>

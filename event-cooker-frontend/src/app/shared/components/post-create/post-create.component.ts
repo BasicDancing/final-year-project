@@ -35,16 +35,17 @@ export class PostCreateComponent implements OnInit {
       this.user = this.userForm.value;
       this.id = localStorage.getItem('user');
       this.user.user = this.id;
+      this.user.approval = false;
       console.log(this.user);
       this.postService.create(this.user).subscribe(
         (data) => {
           console.log(data);
         }
       )
+      alert('Successfully created! But need varification for publish.')
+      this.refresh()
     } else {
       alert('User form is not valid!!')
     }
   }
-
-
 }

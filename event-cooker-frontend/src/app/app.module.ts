@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     OurServicesComponent,
     FooterComponent,
     NavbarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

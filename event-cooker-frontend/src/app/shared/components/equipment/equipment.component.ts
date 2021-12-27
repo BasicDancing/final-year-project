@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Equipment } from 'src/app/master-data/equipment/equipment';
+import { EquipmentService } from 'src/app/master-data/equipment/equipment.service';
 
 @Component({
   selector: 'app-equipment',
@@ -7,18 +9,53 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EquipmentComponent implements OnInit {
 
-  @Input() equipments: Array<any>;
+  equipments: Equipment[];
   display = "none";
+  check: any;
+  id: any;
 
-  constructor() { }
+  constructor(
+    private eqService: EquipmentService,
+  ) { }
 
   ngOnInit(): void {
+    this.getEquipment();
   }
 
-  openModal() {
-    this.display = "block";
+  getEquipment(){
+    this.id = localStorage.getItem('user')
+    this.eqService.getByUser(this.id).subscribe(
+      (data) => {
+        this.equipments = data;
+        console.log(data);
+      }
+    );
   }
+
+  openModal(key: string) {
+    this.display = "block";
+    this.check = key;
+    console.log(key);
+  }
+
   onCloseHandled() {
     this.display = "none";
+    this.getEquipment();
+  }
+
+  isCheck(key: string): boolean {
+    if(key == this.check){
+      console.log("ture");
+      return true;
+    }
+    else return false;
+  }
+
+  idCheck(userId: string): boolean{
+    if(userId == localStorage.getItem('user')){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

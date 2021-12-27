@@ -16,6 +16,7 @@ public class UserAllInfoUtil {
 
     //POST
     public User createUser(User user){
+        user.setApproval(false);
         user.setCreatedOn(Instant.now());
         return userRepository.save(user);
     }

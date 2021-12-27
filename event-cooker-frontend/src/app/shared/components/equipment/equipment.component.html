@@ -1,16 +1,19 @@
 <div class="container ">
-    <h1>Equipments</h1>
+    <div class="flex justify-between">
+        <h1>Equipments</h1>
+        <button type="button" class="btn btn-primary" (click)="openModal('add')">Add</button>
+    </div>
     <div class="row">
         <div class="col-3" *ngFor="let equipment of equipments">
-            <button type="button" (click)="openModal()">
+            <button type="button" (click)="openModal('view')">
                 <div class="mb-4 bg-gray-100 flex justify-between items-center">
                     <div
                         class="w-60 rounded-md cursor-pointer shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 duration-500">
-                        <img src="https://ipt.imgix.net/206728/x/0/"
-                            alt="" />
+                        <img class="w-40 h-40" src='{{ equipment.photo || "https://ipt.imgix.net/206728/x/0/" }}'
+                            alt="{{ equipment.name }}" />
                         <div class="p-4 bg-white">
-                            <span class="text-sm font-semibold text-red-50 bg-red-400 py-1 px-3 rounded-full">-30%</span>
-                            <h1 class="mt-4 font-bold text-2xl">Camera</h1>
+                            <span class="text-sm font-semibold text-red-50 bg-red-400 py-1 px-3 rounded-full">{{equipment.model}}</span>
+                            <h1 class="mt-4 font-bold text-2xl">{{ equipment.name }}</h1>
                         </div>
                     </div>
                 </div>
@@ -19,12 +22,17 @@
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Equipment Details</h4>
+                            <h4 class="modal-title">Equipment</h4>
                             <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
                                     aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                            <app-equipment-details></app-equipment-details>
+                            <div *ngIf="isCheck('add')">
+                                <app-create-equipment></app-create-equipment>
+                            </div>
+                            <div *ngIf="isCheck('view')">
+                                <app-equipment-details [equipment]="equipment"></app-equipment-details>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>

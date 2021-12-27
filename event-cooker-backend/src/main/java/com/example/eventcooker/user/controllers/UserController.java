@@ -1,5 +1,6 @@
 package com.example.eventcooker.user.controllers;
 
+import com.example.eventcooker.masterdata.models.posts.Post;
 import com.example.eventcooker.user.services.UserService;
 import com.example.eventcooker.user.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,20 @@ public class UserController {
         try {
             return new ResponseEntity<>(
                     userService.updateUser(id, user),
+                    HttpStatus.OK
+            );
+        }catch (Exception e){
+            return new ResponseEntity<>(
+                    HttpStatus.NOT_MODIFIED
+            );
+        }
+    }
+
+    @PutMapping("/approve/{id}")
+    public @ResponseBody ResponseEntity<User> changeUser(@PathVariable Long id){
+        try {
+            return new ResponseEntity<>(
+                    userService.aprroveUser(id),
                     HttpStatus.OK
             );
         }catch (Exception e){

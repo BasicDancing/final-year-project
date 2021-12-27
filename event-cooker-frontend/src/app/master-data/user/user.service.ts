@@ -28,6 +28,10 @@ export class UserService {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
 
+  public approve(id: string): Observable<object> {
+    return this.http.put(`${baseUrl}/approve/${id}`, null);
+  }
+
   public delete(id: number): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }

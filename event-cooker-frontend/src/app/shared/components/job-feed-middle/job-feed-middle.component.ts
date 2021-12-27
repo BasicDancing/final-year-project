@@ -34,4 +34,12 @@ export class JobFeedMiddleComponent implements OnInit {
   onCloseHandled() {
     this.display = "none";
   }
+
+  idCheck(userId: string): boolean{
+    if(userId == localStorage.getItem('user')){
+      return true;
+    }else{
+      return false;
+    }
+  }
 }

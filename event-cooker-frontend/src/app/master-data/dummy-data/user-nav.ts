@@ -9,8 +9,8 @@ export const dropOptions = [
         link: "/user/profile"
     },
     {
-        title: "Massages",
-        link: "/user/massages"
+        title: "Messages",
+        link: "/user/message"
     },
     {
         title: "Settings",
@@ -38,11 +38,15 @@ export const navOptions = [
     },
     {
         title: "Payments",
-        link: "/user.payments"
+        link: "/user/payments"
     },
     {
         title: "History",
-        link: "/admin/history"
+        link: "/user/history"
+    },
+    {
+        title: "Notification",
+        link: "/user/notification"
     },
 ]
 

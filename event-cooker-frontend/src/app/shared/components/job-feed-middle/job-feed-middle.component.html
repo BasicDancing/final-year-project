@@ -2,9 +2,9 @@
     <app-post-create></app-post-create>
 </div>
 <div class="rounded overflow-hidden shadow-lg mb-5 w-full text-center" *ngFor="let post of posts">
-    <button type="button" (click)="openModal()">
-        <div class="main text-center">
-            <img class="ml-48 w-96" src="{{post.photo}}" alt="Sunset in the mountains">
+    <button type="button" (click)="openModal()" *ngIf="post.approval">
+        <div class="main text-center mb-4">
+            <img class="ml-48 w-96" src='{{post.photo || "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/104113705/original/6076831db34315e45bd2a31a9d79bb7b91d48e04/design-flat-style-minimalist-avatar-of-you.jpg"}}' alt="{{post.title}}">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ post.title }}</div>
                 <p class="text-gray-700 text-base">
@@ -24,19 +24,19 @@
                     <label class="font-bold">Created on: <span>{{ post.createdOn }}</span></label>
                 </div>
             </div>
+            <button *ngIf="!idCheck(post.user)" class="btn btn-outline-primary text-center">Send Request</button>
         </div>
     </button>
-    <button class="btn btn-outline-primary text-center">Send Request</button>
     <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Model Title</h4>
+                    <h4 class="modal-title">Post Details</h4>
                     <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <app-job-details></app-job-details>
+                    <app-job-details [post]="post"></app-job-details>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
