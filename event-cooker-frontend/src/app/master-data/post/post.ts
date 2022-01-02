@@ -5,5 +5,10 @@ export class Post{
     description: string;
     approval: boolean;
     user: any;
-    client: any;
+    userName: string;
+    userPhoto: string;
+    userStatus: boolean;
+    userNumber: string;
+    employee: any;
+    createdOn: any;
 }

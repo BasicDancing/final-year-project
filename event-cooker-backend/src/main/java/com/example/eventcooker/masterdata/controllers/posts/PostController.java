@@ -62,6 +62,21 @@ public class PostController {
         }
     }
 
+    @GetMapping("/employee/{employee}")
+    public @ResponseBody
+    ResponseEntity<List<Post>> getByEmployee(@PathVariable Long employee){
+        try {
+            return new ResponseEntity<>(
+                    postService.findByEmployee(employee),
+                    HttpStatus.OK
+            );
+        }catch (Exception e){
+            return new ResponseEntity<>(
+                    HttpStatus.NOT_FOUND
+            );
+        }
+    }
+
     @GetMapping("/")
     public @ResponseBody ResponseEntity<List<Post>> getPosts(){
         try {
@@ -95,6 +110,20 @@ public class PostController {
         try {
             return new ResponseEntity<>(
                     postService.aprrovePost(id),
+                    HttpStatus.OK
+            );
+        }catch (Exception e){
+            return new ResponseEntity<>(
+                    HttpStatus.NOT_MODIFIED
+            );
+        }
+    }
+
+    @PutMapping("/assign/{id}/{user}")
+    public @ResponseBody ResponseEntity<Post> changePost(@PathVariable Long id, @PathVariable Long user){
+        try {
+            return new ResponseEntity<>(
+                    postService.assignEmployee(id, user),
                     HttpStatus.OK
             );
         }catch (Exception e){

@@ -11,38 +11,32 @@ import java.time.Instant;
 @Setter
 @ToString
 @NoArgsConstructor
-@Table(name = "post")
-public class Post {
+@Table(name = "confirmation")
+public class Confirmation {
     @Id
     @Column(name = "id")
     @SequenceGenerator(
             initialValue = 1,
-            name = "post_seq",
-            sequenceName = "post_sequence"
+            name = "confirmation_seq",
+            sequenceName = "confirmation_sequence"
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "post_seq"
+            generator = "confirmation_seq"
     )
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "userId")
+    private Long userId;
 
-    @Column(name = "photo")
-    private String photo;
+    @Column(name = "profId")
+    private Long profId;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "postId")
+    private Long postId;
 
-    @Column(name = "user")
-    private Long user;
-
-    @Column(name = "employee")
-    private Long employee;
-
-    @Column(name = "approval")
-    private boolean approval;
+    @Column(name = "proposal")
+    private String proposal;
 
     //Will be auto generated
     @Column(name = "createdOn")

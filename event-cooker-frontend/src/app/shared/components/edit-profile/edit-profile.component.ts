@@ -40,6 +40,7 @@ export class EditProfileComponent implements OnInit {
       about: [''],
       description: [''],
       photo: [''],
+      cellphone: [''],
     });
   }
 
@@ -57,6 +58,9 @@ export class EditProfileComponent implements OnInit {
         this.userForm.value.description = null;
       }
       if(this.userForm.value.photo == ''){
+        this.userForm.value.photo = null;
+      }
+      if(this.userForm.value.cellphone == ''){
         this.userForm.value.photo = null;
       }
       this.userService.update(this.id, this.userForm.value).subscribe(

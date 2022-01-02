@@ -8,7 +8,7 @@ import { Equipment } from 'src/app/master-data/equipment/equipment';
 })
 export class EquipmentDetailsComponent implements OnInit {
 
-  @Input() equipment: Equipment;
+  @Input() public equipment: Equipment;
 
   constructor() { }
 

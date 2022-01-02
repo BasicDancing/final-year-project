@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const baseUrl = "http://localhost:8081/api/masterdata/post"
+const baseUrl = "http://localhost:8081/api/masterdata/confirmation"
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class ConfirmationService {
   constructor(
     private http: HttpClient,
   ) { }
@@ -16,16 +16,12 @@ export class PostService {
     return this.http.get(`${baseUrl}/`);
   }
 
-  public get(id: string): Observable<any> {
+  public get(id: number): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
   public getByUser(user: string): Observable<any> {
     return this.http.get(`${baseUrl}/user/${user}`);
-  }
-
-  public getByEmployee(employee: string): Observable<any> {
-    return this.http.get(`${baseUrl}/employee/${employee}`);
   }
 
   public create(data: object): Observable<object> {
@@ -34,14 +30,6 @@ export class PostService {
 
   public update(id: string, data: object): Observable<object> {
     return this.http.put(`${baseUrl}/${id}`, data);
-  }
-
-  public approve(id: string): Observable<object> {
-    return this.http.put(`${baseUrl}/approve/${id}`, null);
-  }
-
-  public assign(id: string, employee: string): Observable<object> {
-    return this.http.put(`${baseUrl}/assign/${id}/${employee}`, null);
   }
 
   public delete(id: string): Observable<any> {

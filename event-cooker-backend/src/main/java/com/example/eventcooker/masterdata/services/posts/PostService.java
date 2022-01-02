@@ -29,6 +29,10 @@ public class PostService {
         return postRepository.findByUser(user);
     }
 
+    public List<Post> findByEmployee(Long employee){
+        return postRepository.findByEmployee(employee);
+    }
+
     //GET ALL
     public List<Post> findPosts(){
         return postRepository.findAll();
@@ -46,12 +50,6 @@ public class PostService {
             exPost.setPhoto(post.getPhoto());
         if(post.getDescription() != null)
             exPost.setDescription(post.getDescription());
-        if(post.getUser() != null){
-            exPost.setUser(post.getUser());
-        }
-        if(post.getClient() != null){
-            exPost.setClient(post.getClient());
-        }
         exPost.setModifiedOn(Instant.now());
 
         return postRepository.save(exPost);
@@ -62,7 +60,18 @@ public class PostService {
         Post exPost = postRepository.findById(id).orElse(null);
 
         assert exPost != null;
-        exPost.setApproval(true);
+        exPost.setApproval(!exPost.isApproval());
+        exPost.setModifiedOn(Instant.now());
+
+        return postRepository.save(exPost);
+    }
+
+    public Post assignEmployee(Long id, Long user){
+
+        Post exPost = postRepository.findById(id).orElse(null);
+
+        assert exPost != null;
+        exPost.setEmployee(user);
         exPost.setModifiedOn(Instant.now());
 
         return postRepository.save(exPost);

@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Equipment } from 'src/app/master-data/equipment/equipment';
 import { EquipmentService } from 'src/app/master-data/equipment/equipment.service';
+import { CreateEquipmentComponent } from '../create-equipment/create-equipment.component';
+import { EquipmentDetailsComponent } from '../equipment-details/equipment-details.component';
 
 @Component({
   selector: 'app-equipment',
@@ -10,12 +13,14 @@ import { EquipmentService } from 'src/app/master-data/equipment/equipment.servic
 export class EquipmentComponent implements OnInit {
 
   equipments: Equipment[];
+  equipment: Equipment;
   display = "none";
   check: any;
   id: any;
 
   constructor(
     private eqService: EquipmentService,
+    private modalService: NgbModal,
   ) { }
 
   ngOnInit(): void {
@@ -32,30 +37,21 @@ export class EquipmentComponent implements OnInit {
     );
   }
 
-  openModal(key: string) {
-    this.display = "block";
-    this.check = key;
-    console.log(key);
-  }
-
-  onCloseHandled() {
-    this.display = "none";
-    this.getEquipment();
-  }
-
-  isCheck(key: string): boolean {
-    if(key == this.check){
-      console.log("ture");
-      return true;
-    }
-    else return false;
-  }
-
   idCheck(userId: string): boolean{
     if(userId == localStorage.getItem('user')){
       return true;
     }else{
       return false;
+    }
+  }
+
+  openModal(key: string, equipment: Equipment) {
+    if(key=='view'){
+      const modalRef = this.modalService.open(EquipmentDetailsComponent, {size: 'lg', windowClass: 'modal-xl'});
+      modalRef.componentInstance.equipment = equipment;
+    }else{
+      const modalRef = this.modalService.open(CreateEquipmentComponent, {size: 'lg', windowClass: 'modal-xl'});
+      //modalRef.componentInstance.equipment = equipment;
     }
   }
 }
