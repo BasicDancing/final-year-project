@@ -17,6 +17,11 @@ export class PostComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+
+  refresh(){
     this.getAllPost();
   }
 
@@ -34,9 +39,9 @@ export class PostComponent implements OnInit {
     this.postService.approve(id).subscribe(
       (data) => {
         console.log(data);
+        this.refresh()
       }
     );
-    this.getAllPost();
   }
 
 }

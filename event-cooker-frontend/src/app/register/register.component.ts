@@ -40,8 +40,10 @@ export class RegisterComponent implements OnInit {
           console.log(data);
           this.refresh();
       });
+      this.refresh();
     } else {
       alert('User form is not valid!!')
+      this.refresh();
     }
   }
 

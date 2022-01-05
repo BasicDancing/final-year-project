@@ -16,6 +16,10 @@ export class PostComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+  refresh(){
     this.postLoad();
   }
 
@@ -34,7 +38,7 @@ export class PostComponent implements OnInit {
     this.postService.delete(id).subscribe(
       (data) =>{
         console.log(data);
-        this.postLoad();
+        this.refresh();
       }
     )
   }

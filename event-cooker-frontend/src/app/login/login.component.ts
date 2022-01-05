@@ -24,6 +24,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.refresh()
+
+    if(localStorage.getItem('token') != null){
+      this.execute = true;
+    }
+    let userName = localStorage.getItem('user');
+    this.findId(userName);
   }
 
   refresh(){
@@ -44,16 +50,18 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', this.token);
           localStorage.setItem('user', this.user.username);
           console.log(this.token);
-          this.findId(this.user.username);
+          this.refresh();
+          let userName = localStorage.getItem('user');
+          this.findId(userName);
         }
       )
-      this.wrongSnackBar();
+
     } else {
       this.wrongSnackBar();
     }
   }
 
-  findId(username: string){
+  findId(username: any){
     this.userService.getByUser(username).subscribe(
       (data) => {
         localStorage.setItem('user', data.userId)

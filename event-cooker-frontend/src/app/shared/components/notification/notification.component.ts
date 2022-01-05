@@ -46,6 +46,7 @@ export class NotificationComponent implements OnInit {
           this.loadPost(notification);
           console.log(notification);
         }
+        this.notifications.reverse();
         console.log(this.notifications);
       }
     )
@@ -92,6 +93,7 @@ export class NotificationComponent implements OnInit {
         this.postService.approve(postId).subscribe(
           (data) => {
             console.log(data);
+            this.reload();
           }
         );
       }

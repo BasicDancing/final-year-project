@@ -45,6 +45,7 @@ export class MessageComponent implements OnInit {
           console.log(message);
         }
         console.log(this.messages);
+        this.messages.reverse();
       }
     )
   }

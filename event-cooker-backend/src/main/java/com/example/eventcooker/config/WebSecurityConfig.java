@@ -72,10 +72,11 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Our public endpoints
                 .antMatchers("/authenticate").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/masterdata/auth/user/all/info/add").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/**").permitAll()
-                .antMatchers(HttpMethod.PUT, "/api/**").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/api/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/user/{profession}").permitAll()
+//                .antMatchers(HttpMethod.GET, "/api/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/api/**").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/api/**").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/api/**").permitAll()
                 // Our private endpoints
                 .anyRequest().authenticated();
 

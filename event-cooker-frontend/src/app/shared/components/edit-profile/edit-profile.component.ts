@@ -39,8 +39,8 @@ export class EditProfileComponent implements OnInit {
       website: [''],
       about: [''],
       description: [''],
-      photo: [''],
       cellphone: [''],
+      photo: [''],
     });
   }
 

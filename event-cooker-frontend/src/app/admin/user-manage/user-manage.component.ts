@@ -15,6 +15,10 @@ export class UserManageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.refresh()
+  }
+
+  refresh(){
     this.getAllUser()
   }
 
@@ -32,9 +36,9 @@ export class UserManageComponent implements OnInit {
     this.userService.approve(id).subscribe(
       (data) => {
         console.log(data);
+        this.refresh()
       }
     );
-    this.getAllUser();
   }
 
 }
